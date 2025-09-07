@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import ProjectModal from "@/components/ProjectModal";
 import { projectData, type Project } from "@/data/projects";
 
 export default function Projects() {
@@ -88,47 +89,12 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Small Project Popup */}
+      {/* Project Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={closeProjectModal}>
-          <div className="bg-background border border-border rounded-lg p-6 max-w-md w-full max-h-[80vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-semibold text-foreground">{selectedProject.title}</h3>
-              <button onClick={closeProjectModal} className="text-muted-foreground hover:text-foreground">
-                ✕
-              </button>
-            </div>
-            
-            <img 
-              src={selectedProject.image} 
-              alt={selectedProject.title}
-              className="w-full h-40 object-cover rounded-lg mb-4"
-            />
-            
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              {selectedProject.description}
-            </p>
-            
-            <div className="flex flex-wrap gap-2 mb-4">
-              {selectedProject.technologies.map((tech) => (
-                <span key={tech} className="px-2 py-1 bg-muted text-muted-foreground rounded text-xs">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            
-            <div className="flex gap-3">
-              <a 
-                href={selectedProject.demoUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full btn-primary text-center"
-              >
-                View Demo
-              </a>
-            </div>
-          </div>
-        </div>
+        <ProjectModal 
+          project={selectedProject} 
+          onClose={closeProjectModal} 
+        />
       )}
     </section>
   );

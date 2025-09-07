@@ -50,8 +50,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         onClick={handleBackdropClick}
         data-testid="modal-backdrop"
       />
-      <div className="relative w-full max-w-7xl max-h-[98vh] bg-card rounded-lg border border-border overflow-hidden animate-scale-in shadow-2xl">
-        <div className="flex flex-col max-h-[98vh]">
+      <div className="relative w-full max-w-5xl max-h-[90vh] bg-card rounded-lg border border-border overflow-hidden animate-scale-in shadow-2xl">
+        <div className="flex flex-col max-h-[90vh]">
           {/* Modal Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
             <h3 className="text-2xl font-semibold" data-testid="modal-title">
