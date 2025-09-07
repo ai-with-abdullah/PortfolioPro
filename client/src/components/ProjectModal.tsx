@@ -21,14 +21,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50" data-testid="project-modal">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" data-testid="project-modal">
       <div 
         className="absolute inset-0 bg-black/80 backdrop-blur-sm" 
         onClick={handleBackdropClick}
         data-testid="modal-backdrop"
       />
-      <div className="absolute inset-4 md:inset-8 bg-card rounded-lg border border-border overflow-hidden animate-scale-in shadow-2xl">
-        <div className="flex flex-col h-full">
+      <div className="relative w-full max-w-4xl max-h-[90vh] bg-card rounded-lg border border-border overflow-hidden animate-scale-in shadow-2xl">
+        <div className="flex flex-col max-h-[90vh]">
           {/* Modal Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
             <h3 className="text-2xl font-semibold" data-testid="modal-title">

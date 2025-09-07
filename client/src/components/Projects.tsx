@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Eye, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import { projectData, type Project } from "@/data/projects";
-import { openWhatsApp } from "@/lib/whatsapp";
 import ProjectModal from "@/components/ProjectModal";
 
 export default function Projects() {
@@ -85,14 +85,15 @@ export default function Projects() {
         </div>
 
         <div className="text-center mt-12">
-          <Button 
-            onClick={() => openWhatsApp('view_more_projects')}
-            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
-            data-testid="button-view-more-projects"
-          >
-            <Plus className="w-4 h-4 mr-2" />
-            View More Projects
-          </Button>
+          <Link href="/projects">
+            <Button 
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+              data-testid="button-view-more-projects"
+            >
+              <Plus className="w-4 h-4 mr-2" />
+              View More Projects
+            </Button>
+          </Link>
         </div>
       </div>
 

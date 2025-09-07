@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Download } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 import { openWhatsApp } from "@/lib/whatsapp";
 
 interface HeaderProps {
@@ -10,10 +11,57 @@ interface HeaderProps {
 
 export default function Header({ onNavigate }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const [location] = useLocation();
+
+  // Track active section based on scroll position
+  useEffect(() => {
+    if (location === '/projects') {
+      setActiveSection('projects');
+      return;
+    }
+
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location]);
 
   const handleNavClick = (section: string) => {
+    if (section === 'projects' && location === '/') {
+      window.location.href = '/projects';
+      return;
+    }
+    if (section === 'home' && location !== '/') {
+      window.location.href = '/';
+      return;
+    }
     onNavigate(section);
     setIsMobileMenuOpen(false);
+  };
+
+  const getNavItemClass = (section: string) => {
+    const baseClass = "relative px-3 py-2 rounded-lg transition-all duration-300 hover:scale-105";
+    const activeClass = "text-primary bg-primary/10";
+    const inactiveClass = "hover:text-primary hover:bg-primary/5";
+    
+    return `${baseClass} ${activeSection === section ? activeClass : inactiveClass}`;
   };
 
   return (
@@ -24,26 +72,38 @@ export default function Header({ onNavigate }: HeaderProps) {
             Muhammad Abdullah
           </div>
           
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-2">
             <button onClick={() => handleNavClick('home')} 
-                    className="hover:text-primary transition-all duration-300 hover:scale-105" 
+                    className={getNavItemClass('home')}
                     data-testid="nav-home">
               Home
+              {activeSection === 'home' && (
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full animate-scale-in"></span>
+              )}
             </button>
             <button onClick={() => handleNavClick('about')} 
-                    className="hover:text-primary transition-all duration-300 hover:scale-105"
+                    className={getNavItemClass('about')}
                     data-testid="nav-about">
               About
+              {activeSection === 'about' && (
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full animate-scale-in"></span>
+              )}
             </button>
             <button onClick={() => handleNavClick('projects')} 
-                    className="hover:text-primary transition-all duration-300 hover:scale-105"
+                    className={getNavItemClass('projects')}
                     data-testid="nav-projects">
               Projects
+              {activeSection === 'projects' && (
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full animate-scale-in"></span>
+              )}
             </button>
             <button onClick={() => handleNavClick('contact')} 
-                    className="hover:text-primary transition-all duration-300 hover:scale-105"
+                    className={getNavItemClass('contact')}
                     data-testid="nav-contact">
               Contact
+              {activeSection === 'contact' && (
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full animate-scale-in"></span>
+              )}
             </button>
             <Button
               onClick={() => {
@@ -51,7 +111,7 @@ export default function Header({ onNavigate }: HeaderProps) {
                 setTimeout(() => openWhatsApp('resume_download'), 1000);
               }}
               variant="outline"
-              className="border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+              className="ml-4 border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
               data-testid="button-resume"
             >
               <Download className="w-4 h-4 mr-2" />

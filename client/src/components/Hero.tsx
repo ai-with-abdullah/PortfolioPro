@@ -2,6 +2,7 @@ import { Rocket, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaWhatsapp } from "react-icons/fa";
 import { openWhatsApp } from "@/lib/whatsapp";
+import TypingAnimation from "@/components/TypingAnimation";
 
 interface HeroProps {
   onViewWork: () => void;
@@ -30,16 +31,42 @@ export default function Hero({ onViewWork }: HeroProps) {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto" 
-             data-testid="hero-subtitle">
-            BSAI Student | Generative AI Specialist | Data Scientist | Full-Stack Developer
-          </p>
+          <div className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto" 
+               data-testid="hero-subtitle">
+            BSAI Student | 
+            <TypingAnimation 
+              texts={[
+                "Generative AI Specialist",
+                "Data Scientist",
+                "Full-Stack Developer",
+                "Machine Learning Engineer",
+                "AI Innovation Expert"
+              ]}
+              className="text-primary font-semibold"
+            />
+          </div>
           
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto"
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto"
              data-testid="hero-description">
             Crafting intelligent solutions with Python, JavaScript, React, and cutting-edge AI technologies. 
             Passionate about transforming ideas into scalable digital experiences.
           </p>
+
+          {/* Additional Typing Animation */}
+          <div className="text-base text-accent mb-12 max-w-2xl mx-auto font-medium" data-testid="hero-skills">
+            <TypingAnimation 
+              texts={[
+                "💻 Building AI-powered web applications",
+                "🤖 Developing machine learning models",
+                "📊 Creating data visualization dashboards", 
+                "🚀 Deploying scalable cloud solutions",
+                "🎯 Solving complex business problems"
+              ]}
+              speed={80}
+              deleteSpeed={40}
+              pauseTime={3000}
+            />
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button onClick={onViewWork} 
