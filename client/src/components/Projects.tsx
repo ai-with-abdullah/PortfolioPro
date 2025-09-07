@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Eye, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { projectData, type Project } from "@/data/projects";
-import ProjectModal from "@/components/ProjectModal";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -89,12 +88,59 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Project Modal */}
+      {/* Small Project Popup */}
       {selectedProject && (
-        <ProjectModal 
-          project={selectedProject} 
-          onClose={closeProjectModal} 
-        />
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={closeProjectModal}>
+          <div className="bg-background border border-border rounded-lg p-6 max-w-md w-full max-h-[80vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-xl font-semibold text-foreground">{selectedProject.title}</h3>
+              <button onClick={closeProjectModal} className="text-muted-foreground hover:text-foreground">
+                ✕
+              </button>
+            </div>
+            
+            <img 
+              src={selectedProject.image} 
+              alt={selectedProject.title}
+              className="w-full h-40 object-cover rounded-lg mb-4"
+            />
+            
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              {selectedProject.description}
+            </p>
+            
+            <div className="flex flex-wrap gap-2 mb-4">
+              {selectedProject.technologies.map((tech) => (
+                <span key={tech} className="px-2 py-1 bg-muted text-muted-foreground rounded text-xs">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            
+            <div className="flex gap-3">
+              {selectedProject.demoUrl && (
+                <a 
+                  href={selectedProject.demoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1 btn-primary text-center"
+                >
+                  View Demo
+                </a>
+              )}
+              {selectedProject.demoUrl && (
+                <a 
+                  href={selectedProject.demoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1 btn-outline text-center"
+                >
+                  Learn More
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
       )}
     </section>
   );

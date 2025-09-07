@@ -202,12 +202,13 @@ export default function Contact() {
                   return (
                     <div 
                       key={service.name}
-                      className={`text-center p-6 bg-${service.color}/10 rounded-xl hover:bg-${service.color}/20 transition-all duration-300 hover-lift group animate-scale-in`}
-                      style={{animationDelay: `${index * 0.1}s`}}
+                      className="text-center p-4 border border-border rounded-lg hover:border-primary/50 transition-all duration-300"
                       data-testid={`service-${service.name.toLowerCase().replace(/\s+/g, '-')}`}
                     >
-                      <IconComponent className={`text-${service.color} text-3xl mb-3 mx-auto w-8 h-8 group-hover:scale-110 transition-transform animate-float`} />
-                      <div className="font-bold text-lg">{service.name}</div>
+                      <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <IconComponent className="w-6 h-6 text-primary" />
+                      </div>
+                      <h4 className="font-medium text-foreground">{service.name}</h4>
                     </div>
                   );
                 })}
