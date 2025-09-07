@@ -11,18 +11,31 @@ interface HeroProps {
 export default function Hero({ onViewWork }: HeroProps) {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10"></div>
+      {/* Animated background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20 animate-background"></div>
+      
+      {/* Floating particles */}
+      <div className="floating-particles">
+        <div className="particle w-2 h-2 top-1/4 left-1/4 animate-float"></div>
+        <div className="particle w-1 h-1 top-1/3 right-1/4 animate-float-delayed"></div>
+        <div className="particle w-3 h-3 bottom-1/3 left-1/3 animate-float-slow"></div>
+        <div className="particle w-1.5 h-1.5 top-2/3 right-1/3 animate-float"></div>
+        <div className="particle w-2 h-2 bottom-1/4 right-1/4 animate-float-delayed"></div>
+      </div>
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
-          {/* Profile image */}
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full border-4 border-primary/30 overflow-hidden"
-               data-testid="profile-image">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
-                 alt="Muhammad Abdullah - AI Developer" 
-                 className="w-full h-full object-cover" 
-                 loading="lazy" />
+          {/* Profile image with pulse ring */}
+          <div className="relative w-36 h-36 mx-auto mb-8 group">
+            <div className="pulse-ring w-36 h-36"></div>
+            <div className="pulse-ring w-36 h-36" style={{animationDelay: '1s'}}></div>
+            <div className="w-36 h-36 rounded-full border-4 border-primary/50 overflow-hidden relative z-10 hover-lift"
+                 data-testid="profile-image">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                   alt="Muhammad Abdullah - AI Developer" 
+                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                   loading="lazy" />
+            </div>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6" data-testid="hero-title">
@@ -70,16 +83,16 @@ export default function Hero({ onViewWork }: HeroProps) {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button onClick={onViewWork} 
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="magnetic-btn bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl hover-glow"
                     data-testid="button-view-work">
-              <Rocket className="w-4 h-4 mr-2" />
+              <Rocket className="w-5 h-5 mr-2" />
               View My Work
             </Button>
             <Button variant="outline" 
                     onClick={() => openWhatsApp('portfolio_hero')} 
-                    className="border-green-500/50 hover:bg-green-500/10 text-foreground hover:text-green-500 px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                    className="magnetic-btn border-green-500/50 hover:bg-green-500/10 text-foreground hover:text-green-500 px-8 py-4 rounded-lg font-semibold transition-all hover-glow"
                     data-testid="button-connect">
-              <FaWhatsapp className="w-4 h-4 mr-2" />
+              <FaWhatsapp className="w-5 h-5 mr-2" />
               Let's Connect
             </Button>
             <Button 
@@ -88,20 +101,22 @@ export default function Hero({ onViewWork }: HeroProps) {
                 setTimeout(() => openWhatsApp('resume_download'), 1000);
               }}
               variant="secondary"
-              className="px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="magnetic-btn px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl hover-glow"
               data-testid="button-resume-hero"
             >
-              <Download className="w-4 h-4 mr-2" />
+              <Download className="w-5 h-5 mr-2" />
               Download Resume
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Floating elements */}
-      <div className="absolute top-1/4 left-10 w-20 h-20 bg-primary/20 rounded-full animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-secondary/20 rounded-full animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 right-1/4 w-12 h-12 bg-accent/20 rounded-full animate-pulse delay-500"></div>
+      {/* Enhanced floating elements */}
+      <div className="absolute top-1/4 left-10 w-20 h-20 bg-primary/20 rounded-full animate-float blur-sm"></div>
+      <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-secondary/20 rounded-full animate-float-delayed blur-sm"></div>
+      <div className="absolute top-1/2 right-1/4 w-12 h-12 bg-accent/20 rounded-full animate-float-slow blur-sm"></div>
+      <div className="absolute top-3/4 left-1/4 w-8 h-8 bg-primary/30 rounded-full animate-float blur-sm" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-1/2 left-10 w-6 h-6 bg-accent/25 rounded-full animate-float-delayed blur-sm"></div>
     </section>
   );
 }
