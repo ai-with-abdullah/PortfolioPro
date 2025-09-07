@@ -118,26 +118,14 @@ export default function Projects() {
             </div>
             
             <div className="flex gap-3">
-              {selectedProject.demoUrl && (
-                <a 
-                  href={selectedProject.demoUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex-1 btn-primary text-center"
-                >
-                  View Demo
-                </a>
-              )}
-              {selectedProject.demoUrl && (
-                <a 
-                  href={selectedProject.demoUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex-1 btn-outline text-center"
-                >
-                  Learn More
-                </a>
-              )}
+              <a 
+                href={selectedProject.demoUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full btn-primary text-center"
+              >
+                View Demo
+              </a>
             </div>
           </div>
         </div>
