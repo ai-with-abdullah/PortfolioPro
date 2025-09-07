@@ -144,12 +144,10 @@ export default function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8 animate-slide-in-right">
-            <div className="gradient-border p-8 rounded-xl hover-glow hover-lift">
-              <h3 className="text-3xl font-bold mb-8 text-center lg:text-left" data-testid="contact-info-title">
-                <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-                  Get In Touch
-                </span>
+          <div className="space-y-8">
+            <div className="clean-card">
+              <h3 className="text-2xl font-semibold mb-6 text-foreground" data-testid="contact-info-title">
+                Get In Touch
               </h3>
               
               <div className="space-y-8">
@@ -170,23 +168,14 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4" data-testid="contact-email">
-                  <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-muted-foreground">muhammad.abdullah@email.com</p>
-                  </div>
-                </div>
 
                 <div className="flex items-start space-x-4" data-testid="contact-location">
-                  <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-accent" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Location</h4>
-                    <p className="text-muted-foreground">Pakistan</p>
+                    <h4 className="font-semibold mb-1 text-foreground">Location</h4>
+                    <p className="text-muted-foreground">Bahawalpur, Pakistan</p>
                   </div>
                 </div>
 
@@ -203,11 +192,9 @@ export default function Contact() {
             </div>
 
             {/* Services */}
-            <div className="gradient-border p-8 rounded-xl hover-glow hover-lift">
-              <h3 className="text-3xl font-bold mb-8 text-center" data-testid="services-title">
-                <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                  Services Offered
-                </span>
+            <div className="clean-card">
+              <h3 className="text-2xl font-semibold mb-6 text-foreground" data-testid="services-title">
+                Services Offered
               </h3>
               <div className="grid grid-cols-2 gap-6">
                 {services.map((service, index) => {
