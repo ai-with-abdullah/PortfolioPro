@@ -12,13 +12,13 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    projectType: '',
     message: ''
   });
 
-  const subjectOptions = [
+  const projectTypeOptions = [
     'Web Development Project',
-    'AI/ML Consultation',
+    'AI/ML Consultation', 
     'Data Science Project',
     'Mobile App Development',
     'Custom Software Solution',
@@ -38,7 +38,7 @@ export default function Contact() {
   const handleSelectChange = (value: string) => {
     setFormData(prev => ({
       ...prev,
-      subject: value
+      projectType: value
     }));
   };
 
@@ -55,26 +55,22 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="section-padding">
+      <div className="max-w-content">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" data-testid="contact-title">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Let's Work Together
-            </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="contact-title">
+            Let's Work Together
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="contact-subtitle">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance" data-testid="contact-subtitle">
             Ready to bring your ideas to life? Get in touch for custom AI solutions and web development.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="gradient-border p-8 rounded-xl hover-glow animate-slide-in-left">
-            <h3 className="text-3xl font-bold mb-8 text-center lg:text-left" data-testid="form-title">
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Send Message
-              </span>
+          <div className="clean-card">
+            <h3 className="text-2xl font-semibold mb-6" data-testid="form-title">
+              Send Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
               <div className="grid md:grid-cols-2 gap-6">
@@ -88,7 +84,6 @@ export default function Contact() {
                     placeholder="Your full name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 hover:border-primary/50"
                     data-testid="input-name"
                   />
                 </div>
@@ -99,23 +94,22 @@ export default function Contact() {
                     id="email"
                     name="email" 
                     required 
-                    placeholder="your.email@example.com"
+                    placeholder="Your email address"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 hover:border-primary/50"
                     data-testid="input-email"
                   />
                 </div>
               </div>
               
               <div>
-                <Label htmlFor="subject" className="block text-sm font-medium mb-2">Subject *</Label>
-                <Select value={formData.subject} onValueChange={handleSelectChange} required>
-                  <SelectTrigger className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 hover:border-primary/50" data-testid="select-subject">
-                    <SelectValue placeholder="Choose the subject of your inquiry" />
+                <Label htmlFor="projectType" className="block text-sm font-medium mb-2">Project Type *</Label>
+                <Select value={formData.projectType} onValueChange={handleSelectChange} required>
+                  <SelectTrigger className="w-full" data-testid="select-project-type">
+                    <SelectValue placeholder="Choose your project type" />
                   </SelectTrigger>
                   <SelectContent>
-                    {subjectOptions.map((option) => (
+                    {projectTypeOptions.map((option) => (
                       <SelectItem key={option} value={option}>{option}</SelectItem>
                     ))}
                   </SelectContent>
@@ -132,17 +126,18 @@ export default function Contact() {
                   placeholder="Tell me about your project requirements, timeline, and any specific details..."
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none transition-all duration-300 hover:border-primary/50"
+                  className="resize-none"
                   data-testid="textarea-message"
                 />
               </div>
               
               <Button 
                 type="submit" 
-                className="magnetic-btn w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl hover-glow text-lg"
+                size="lg"
+                className="w-full bg-green-600 hover:bg-green-700 text-white"
                 data-testid="button-submit-form"
               >
-                <FaWhatsapp className="w-5 h-5 mr-2" />
+                <FaWhatsapp className="w-4 h-4 mr-2" />
                 Send via WhatsApp
               </Button>
             </form>

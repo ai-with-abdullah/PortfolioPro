@@ -211,6 +211,62 @@
   .scroll-progress {
     @apply h-full bg-primary transition-transform duration-150 ease-out origin-left;
   }
+
+  /* Smooth scroll animations */
+  .scroll-animate {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .scroll-animate.animate {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Better icon visibility */
+  .icon-visible {
+    @apply text-foreground;
+  }
+
+  .dark .icon-visible {
+    @apply text-foreground;
+  }
+
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced mobile menu animation */
+  .mobile-menu-enter {
+    @apply opacity-0 -translate-y-2;
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  /* Stagger animation for list items */
+  .stagger-item {
+    @apply opacity-0 translate-y-4;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-item:nth-child(6) { animation-delay: 0.6s; }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
