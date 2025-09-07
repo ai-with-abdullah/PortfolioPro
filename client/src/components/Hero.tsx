@@ -14,7 +14,7 @@ export default function Hero({ onViewWork }: HeroProps) {
       <div className="max-w-content">
         <div className="text-center max-w-4xl mx-auto">
           {/* Clean profile image */}
-          <div className="w-32 h-32 mx-auto mb-8">
+          <div className="w-40 h-40 mx-auto mb-8">
             <img 
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
               alt="Muhammad Abdullah - AI Developer" 
