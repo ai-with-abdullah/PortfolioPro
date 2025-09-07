@@ -33,7 +33,8 @@ export default function Projects() {
           {projectData.map((project) => (
             <div 
               key={project.id}
-              className="project-card group"
+              className="project-card group cursor-pointer"
+              onClick={() => openProjectModal(project)}
               data-testid={`project-card-${project.id}`}
             >
               {/* Project Image */}
@@ -46,21 +47,9 @@ export default function Projects() {
                 />
               </div>
               
-              {/* Overlay */}
-              <div className="project-overlay">
-                <Button 
-                  onClick={() => openProjectModal(project)}
-                  className="btn-primary"
-                  data-testid={`button-view-project-${project.id}`}
-                >
-                  <Eye className="w-4 h-4 mr-2" />
-                  View Project
-                </Button>
-              </div>
-              
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3" data-testid={`project-title-${project.id}`}>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors" data-testid={`project-title-${project.id}`}>
                   {project.title}
                 </h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed" data-testid={`project-description-${project.id}`}>

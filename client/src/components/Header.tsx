@@ -140,19 +140,6 @@ export default function Header({ onNavigate }: HeaderProps) {
                     data-testid="mobile-nav-contact">
               Contact
             </button>
-            <Button
-              onClick={() => {
-                window.open('/resume.pdf', '_blank');
-                setTimeout(() => openWhatsApp('resume_download'), 1000);
-                setIsMobileMenuOpen(false);
-              }}
-              variant="outline"
-              className="w-full justify-start mt-4 border-primary/30 hover:bg-primary/10"
-              data-testid="mobile-button-resume"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Resume
-            </Button>
             <div className="flex justify-center space-x-4 pt-4 border-t border-border">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
                  className="text-foreground hover:text-primary transition-all duration-300 p-2"

@@ -24,31 +24,41 @@ export default function About() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
-            <div className="clean-card" data-testid="ai-passion-card">
+            <div className="clean-card" data-testid="education-card">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Brain className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">AI & Data Science</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Currently pursuing BSAI with a deep focus on Generative AI, Machine Learning, and Data Science. 
-                    Passionate about solving real-world problems with intelligent solutions.
-                  </p>
+                  <h3 className="text-xl font-semibold mb-3">Education Journey</h3>
+                  <div className="space-y-2 text-muted-foreground leading-relaxed">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium text-foreground">BSAI - Islamia University Bahawalpur</span>
+                      <span className="text-sm">2023-2025</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Intermediate (Pre-Engineering)</span>
+                      <span className="text-sm">2023</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Matriculation (Science)</span>
+                      <span className="text-sm">2021</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="clean-card" data-testid="fullstack-card">
+            <div className="clean-card" data-testid="ai-passion-card">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Code className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">Full-Stack Development</h3>
+                  <h3 className="text-xl font-semibold mb-3">AI & Development Focus</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Building scalable web applications using modern technologies. 
-                    From React frontends to Python backends, creating seamless digital experiences.
+                    Specializing in Generative AI, Machine Learning, and Full-Stack Development. 
+                    Passionate about creating intelligent solutions that solve real-world problems.
                   </p>
                 </div>
               </div>
