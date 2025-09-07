@@ -1,8 +1,9 @@
-import { X, ExternalLink } from "lucide-react";
+import { X, ExternalLink, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { type Project } from "@/data/projects";
 import { FaWhatsapp } from "react-icons/fa";
 import { openWhatsApp } from "@/lib/whatsapp";
+import { useEffect } from "react";
 
 interface ProjectModalProps {
   project: Project;
@@ -10,6 +11,14 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -20,6 +29,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     window.open(project.demoUrl, '_blank');
   };
 
+  const handleSourceClick = () => {
+    if (project.sourceUrl) {
+      window.open(project.sourceUrl, '_blank');
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" data-testid="project-modal">
       <div 
@@ -27,8 +42,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         onClick={handleBackdropClick}
         data-testid="modal-backdrop"
       />
-      <div className="relative w-full max-w-4xl max-h-[90vh] bg-card rounded-lg border border-border overflow-hidden animate-scale-in shadow-2xl">
-        <div className="flex flex-col max-h-[90vh]">
+      <div className="relative w-full max-w-6xl max-h-[95vh] bg-card rounded-lg border border-border overflow-hidden animate-scale-in shadow-2xl">
+        <div className="flex flex-col max-h-[95vh]">
           {/* Modal Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
             <h3 className="text-2xl font-semibold" data-testid="modal-title">
@@ -104,15 +119,26 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   <Button 
                     onClick={handleDemoClick}
                     className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center"
-                    data-testid="button-live-demo"
+                    data-testid="button-live-preview"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
+                    Live Preview
                   </Button>
+                  {project.sourceUrl && (
+                    <Button 
+                      onClick={handleSourceClick}
+                      variant="outline"
+                      className="px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                      data-testid="button-source-code"
+                    >
+                      <Code className="w-4 h-4 mr-2" />
+                      Source Code
+                    </Button>
+                  )}
                   <Button 
                     onClick={() => openWhatsApp('buy_code')}
                     className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center transform hover:scale-105 shadow-lg hover:shadow-xl"
-                    data-testid="button-buy-code"
+                    data-testid="button-contact-code"
                   >
                     <FaWhatsapp className="w-4 h-4 mr-2" />
                     Contact for Code

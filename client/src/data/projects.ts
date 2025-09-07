@@ -7,6 +7,7 @@ export interface Project {
   technologies: string[];
   features: string[];
   demoUrl: string;
+  sourceUrl?: string;
 }
 
 export const projectData: Project[] = [
@@ -24,7 +25,8 @@ export const projectData: Project[] = [
       'Real-time response generation',
       'Custom training on domain-specific data'
     ],
-    demoUrl: 'https://ai-chatbot-demo.com'
+    demoUrl: 'https://ai-chatbot-demo.com',
+    sourceUrl: 'https://github.com/muhammad-abdullah/ai-chatbot'
   },
   {
     id: 'data-dashboard',
@@ -40,7 +42,8 @@ export const projectData: Project[] = [
       'Custom report generation',
       'Mobile-responsive design'
     ],
-    demoUrl: 'https://analytics-dashboard-demo.com'
+    demoUrl: 'https://analytics-dashboard-demo.com',
+    sourceUrl: 'https://github.com/muhammad-abdullah/analytics-dashboard'
   },
   {
     id: 'ecommerce-platform',
@@ -56,7 +59,8 @@ export const projectData: Project[] = [
       'Advanced search and filtering',
       'Admin dashboard with analytics'
     ],
-    demoUrl: 'https://ecommerce-platform-demo.com'
+    demoUrl: 'https://ecommerce-platform-demo.com',
+    sourceUrl: 'https://github.com/muhammad-abdullah/ecommerce-platform'
   },
   {
     id: 'ml-model',
@@ -72,7 +76,8 @@ export const projectData: Project[] = [
       'Feature engineering automation',
       'Model performance monitoring'
     ],
-    demoUrl: 'https://ml-prediction-demo.com'
+    demoUrl: 'https://ml-prediction-demo.com',
+    sourceUrl: 'https://github.com/muhammad-abdullah/ml-prediction-model'
   },
   {
     id: 'mobile-app',
@@ -88,7 +93,8 @@ export const projectData: Project[] = [
       'Push notification system',
       'Biometric authentication'
     ],
-    demoUrl: 'https://mobile-app-demo.com'
+    demoUrl: 'https://mobile-app-demo.com',
+    sourceUrl: 'https://github.com/muhammad-abdullah/mobile-app'
   },
   {
     id: 'web-scraper',
@@ -104,6 +110,7 @@ export const projectData: Project[] = [
       'Data validation and cleaning',
       'Export to multiple formats'
     ],
-    demoUrl: 'https://web-scraper-demo.com'
+    demoUrl: 'https://web-scraper-demo.com',
+    sourceUrl: 'https://github.com/muhammad-abdullah/web-scraper'
   }
 ];
