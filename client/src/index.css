@@ -121,7 +121,7 @@
   }
 
   .project-overlay {
-    @apply absolute inset-0 bg-background/95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+    @apply absolute inset-0 bg-background flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300;
   }
 
   .skill-bar {
@@ -133,15 +133,27 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 rounded-md font-medium transition-colors duration-200;
+    @apply bg-primary text-primary-foreground px-6 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
   }
 
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-2 rounded-md font-medium transition-colors duration-200;
+    @apply bg-secondary text-secondary-foreground px-6 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  .btn-secondary:hover {
+    opacity: 0.8;
   }
 
   .btn-outline {
-    @apply border border-border bg-transparent hover:bg-accent hover:text-accent-foreground px-6 py-2 rounded-md font-medium transition-colors duration-200;
+    @apply border border-border bg-transparent px-6 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  .btn-outline:hover {
+    @apply bg-accent text-accent-foreground;
   }
 
   .nav-link {
@@ -170,11 +182,17 @@
   }
 
   .glass-nav {
-    @apply bg-background/80 backdrop-blur-md border-b border-border;
+    @apply bg-background backdrop-blur-md border-b border-border;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .dark .glass-nav {
+    background-color: rgba(15, 23, 42, 0.8);
   }
 
   .scroll-indicator {
-    @apply fixed top-0 left-0 w-full h-1 bg-primary/20 z-50;
+    @apply fixed top-0 left-0 w-full h-1 z-50;
+    background-color: rgba(59, 130, 246, 0.2);
   }
 
   .scroll-progress {
