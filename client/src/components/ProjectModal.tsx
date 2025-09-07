@@ -112,17 +112,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </Button>
                 
                 <Button 
-                  onClick={handleSourceClick}
-                  variant="outline"
-                  size="sm"
-                  className="rounded-lg font-medium transition-all flex items-center justify-center border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  data-testid="button-source-code"
-                >
-                  <Code className="w-3 h-3 mr-1" />
-                  Source Code
-                </Button>
-                
-                <Button 
                   onClick={() => openWhatsApp('buy_code')}
                   size="sm"
                   className="bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-all flex items-center justify-center"
