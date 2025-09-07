@@ -167,6 +167,19 @@
   .nav-link.active::after {
     @apply absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full;
     content: '';
+    transform: scaleX(1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-link::after {
+    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full;
+    content: '';
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
   }
 
   .section-padding {

@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Download, Search } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useLocation } from "wouter";
-import { openWhatsApp } from "@/lib/whatsapp";
 import ThemeToggle from "@/components/ThemeToggle";
 
 interface HeaderProps {
@@ -14,8 +11,6 @@ interface HeaderProps {
 export default function Header({ onNavigate }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [showSearch, setShowSearch] = useState(false);
   const [location] = useLocation();
 
   // Track active section based on scroll position
@@ -96,40 +91,7 @@ export default function Header({ onNavigate }: HeaderProps) {
           </div>
 
           <div className="hidden md:flex items-center space-x-2">
-            {showSearch && (
-              <div className="relative">
-                <Input
-                  type="text"
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-48 h-9"
-                  data-testid="search-input"
-                />
-              </div>
-            )}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setShowSearch(!showSearch)}
-              className="w-9 h-9 px-0"
-              data-testid="search-toggle"
-            >
-              <Search className="h-4 w-4" />
-            </Button>
             <ThemeToggle />
-            <Button
-              onClick={() => {
-                window.open('/resume.pdf', '_blank');
-                setTimeout(() => openWhatsApp('resume_download'), 1000);
-              }}
-              size="sm"
-              className="btn-primary"
-              data-testid="button-resume"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Resume
-            </Button>
             <div className="flex items-center space-x-1 ml-2">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
                  className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-md hover:bg-accent"
