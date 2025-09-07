@@ -1,0 +1,209 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 4 0 R
+/F2 5 0 R
+>>
+>>
+/Contents 6 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+6 0 obj
+<<
+/Length 2850
+>>
+stream
+BT
+/F1 20 Tf
+50 750 Td
+(MUHAMMAD ABDULLAH) Tj
+0 -25 Td
+/F2 12 Tf
+(AI Developer | Data Scientist | Full-Stack Developer) Tj
+0 -15 Td
+(BSAI Student at IUB | Pakistan) Tj
+0 -15 Td
+(WhatsApp: +92 319 4124382 | Email: muhammad.abdullah@email.com) Tj
+
+0 -40 Td
+/F1 16 Tf
+(PROFESSIONAL SUMMARY) Tj
+0 -20 Td
+/F2 11 Tf
+(Passionate BSAI student specializing in Generative AI, Machine Learning, and Data Science.) Tj
+0 -15 Td
+(Experienced in building scalable web applications using modern technologies. Strong) Tj
+0 -15 Td
+(background in Python, JavaScript, React, and AI-powered tools. Committed to creating) Tj
+0 -15 Td
+(innovative solutions that solve real-world problems and deliver meaningful impact.) Tj
+
+0 -30 Td
+/F1 16 Tf
+(TECHNICAL SKILLS) Tj
+0 -20 Td
+/F1 12 Tf
+(Programming Languages:) Tj
+0 -15 Td
+/F2 11 Tf
+(Python, JavaScript, HTML, CSS, SQL) Tj
+
+0 -20 Td
+/F1 12 Tf
+(Frameworks & Libraries:) Tj
+0 -15 Td
+/F2 11 Tf
+(React.js, Next.js, Tailwind CSS, FastAPI, Express.js, Node.js) Tj
+
+0 -20 Td
+/F1 12 Tf
+(AI & Machine Learning:) Tj
+0 -15 Td
+/F2 11 Tf
+(TensorFlow, PyTorch, Scikit-learn, Transformers, GPT Architecture, NLTK) Tj
+
+0 -20 Td
+/F1 12 Tf
+(Data Science Tools:) Tj
+0 -15 Td
+/F2 11 Tf
+(Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebooks) Tj
+
+0 -20 Td
+/F1 12 Tf
+(Databases & Tools:) Tj
+0 -15 Td
+/F2 11 Tf
+(PostgreSQL, MongoDB, Git/GitHub, Docker, APIs, WebSockets) Tj
+
+0 -30 Td
+/F1 16 Tf
+(EDUCATION) Tj
+0 -20 Td
+/F1 12 Tf
+(Bachelor of Science in Artificial Intelligence) Tj
+0 -15 Td
+/F2 11 Tf
+(The Islamia University of Bahawalpur (IUB)) Tj
+0 -15 Td
+(Expected Graduation: 2025) Tj
+
+0 -30 Td
+/F1 16 Tf
+(KEY PROJECTS) Tj
+
+0 -20 Td
+/F1 12 Tf
+(AI Conversational Chatbot) Tj
+0 -15 Td
+/F2 11 Tf
+(• Advanced NLP chatbot using transformers and GPT architecture) Tj
+0 -12 Td
+(• Natural language processing with 95% accuracy) Tj
+0 -12 Td
+(• Context-aware conversation management and multi-language support) Tj
+
+0 -20 Td
+/F1 12 Tf
+(Real-Time Analytics Dashboard) Tj
+0 -15 Td
+/F2 11 Tf
+(• Interactive data visualization with real-time updates) Tj
+0 -12 Td
+(• Predictive analytics integration and custom report generation) Tj
+0 -12 Td
+(• Built with React, D3.js, Python, and PostgreSQL) Tj
+
+0 -20 Td
+/F1 12 Tf
+(AI-Powered E-commerce Platform) Tj
+0 -15 Td
+/F2 11 Tf
+(• Full-stack solution with AI product recommendations) Tj
+0 -12 Td
+(• Automated inventory management and secure payment processing) Tj
+0 -12 Td
+(• Technologies: Next.js, Node.js, MongoDB, Stripe, TensorFlow) Tj
+
+0 -20 Td
+/F1 12 Tf
+(Predictive ML Model) Tj
+0 -15 Td
+/F2 11 Tf
+(• Market prediction model with 94% accuracy rate) Tj
+0 -12 Td
+(• Ensemble learning techniques and real-time data processing) Tj
+0 -12 Td
+(• Feature engineering automation and performance monitoring) Tj
+
+0 -30 Td
+/F1 16 Tf
+(ACHIEVEMENTS) Tj
+0 -20 Td
+/F2 11 Tf
+(• 50+ completed projects in AI, web development, and data science) Tj
+0 -15 Td
+(• 3+ years of practical experience in software development) Tj
+0 -15 Td
+(• Specialized expertise in Generative AI and modern web technologies) Tj
+0 -15 Td
+(• Strong portfolio demonstrating full-stack and AI development skills) Tj
+
+ET
+endstream
+endobj
+
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000274 00000 n 
+0000000351 00000 n 
+0000000424 00000 n 
+trailer
+<<
+/Size 7
+/Root 1 0 R
+>>
+startxref
+3326
+%%EOF

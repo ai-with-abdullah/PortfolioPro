@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { Github, Linkedin, Twitter, Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 interface HeaderProps {
   onNavigate: (section: string) => void;
@@ -21,44 +24,56 @@ export default function Header({ onNavigate }: HeaderProps) {
             Muhammad Abdullah
           </div>
           
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <button onClick={() => handleNavClick('home')} 
-                    className="hover:text-primary transition-colors" 
+                    className="hover:text-primary transition-all duration-300 hover:scale-105" 
                     data-testid="nav-home">
               Home
             </button>
             <button onClick={() => handleNavClick('about')} 
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-all duration-300 hover:scale-105"
                     data-testid="nav-about">
               About
             </button>
             <button onClick={() => handleNavClick('projects')} 
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-all duration-300 hover:scale-105"
                     data-testid="nav-projects">
               Projects
             </button>
             <button onClick={() => handleNavClick('contact')} 
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-all duration-300 hover:scale-105"
                     data-testid="nav-contact">
               Contact
             </button>
+            <Button
+              onClick={() => {
+                window.open('/resume.pdf', '_blank');
+                setTimeout(() => openWhatsApp('resume_download'), 1000);
+              }}
+              variant="outline"
+              className="border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+              data-testid="button-resume"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Resume
+            </Button>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
-               className="text-foreground hover:text-primary transition-colors"
+               className="text-foreground hover:text-primary transition-all duration-300 hover:scale-110 p-2 hover:bg-primary/10 rounded-lg"
                data-testid="link-github">
-              <Github className="w-5 h-5" />
+              <FaGithub className="w-5 h-5" />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-               className="text-foreground hover:text-primary transition-colors"
+               className="text-foreground hover:text-primary transition-all duration-300 hover:scale-110 p-2 hover:bg-primary/10 rounded-lg"
                data-testid="link-linkedin">
-              <Linkedin className="w-5 h-5" />
+              <FaLinkedin className="w-5 h-5" />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-               className="text-foreground hover:text-primary transition-colors"
+               className="text-foreground hover:text-primary transition-all duration-300 hover:scale-110 p-2 hover:bg-primary/10 rounded-lg"
                data-testid="link-twitter">
-              <Twitter className="w-5 h-5" />
+              <FaTwitter className="w-5 h-5" />
             </a>
           </div>
 
@@ -70,7 +85,7 @@ export default function Header({ onNavigate }: HeaderProps) {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 space-y-2" data-testid="mobile-menu">
+          <div className="md:hidden mt-4 space-y-2 animate-fade-in" data-testid="mobile-menu">
             <button onClick={() => handleNavClick('home')} 
                     className="block w-full text-left py-2 hover:text-primary transition-colors"
                     data-testid="mobile-nav-home">
@@ -91,6 +106,36 @@ export default function Header({ onNavigate }: HeaderProps) {
                     data-testid="mobile-nav-contact">
               Contact
             </button>
+            <Button
+              onClick={() => {
+                window.open('/resume.pdf', '_blank');
+                setTimeout(() => openWhatsApp('resume_download'), 1000);
+                setIsMobileMenuOpen(false);
+              }}
+              variant="outline"
+              className="w-full justify-start mt-4 border-primary/30 hover:bg-primary/10"
+              data-testid="mobile-button-resume"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Resume
+            </Button>
+            <div className="flex justify-center space-x-4 pt-4 border-t border-border">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+                 className="text-foreground hover:text-primary transition-all duration-300 p-2"
+                 data-testid="mobile-link-github">
+                <FaGithub className="w-5 h-5" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                 className="text-foreground hover:text-primary transition-all duration-300 p-2"
+                 data-testid="mobile-link-linkedin">
+                <FaLinkedin className="w-5 h-5" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                 className="text-foreground hover:text-primary transition-all duration-300 p-2"
+                 data-testid="mobile-link-twitter">
+                <FaTwitter className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         )}
       </nav>

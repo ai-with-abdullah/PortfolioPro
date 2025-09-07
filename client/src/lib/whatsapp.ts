@@ -15,13 +15,22 @@ export function openWhatsApp(source: string, formData?: Record<string, string>) 
     case 'direct_contact':
       message = 'Hi Muhammad! I found your portfolio and would like to connect.';
       break;
+    case 'floating_button':
+      message = 'Hi Muhammad! I found your portfolio through the WhatsApp button and would love to discuss a project with you.';
+      break;
+    case 'resume_download':
+      message = 'Hi Muhammad! I downloaded your resume and I\'m interested in discussing potential opportunities.';
+      break;
     case 'contact_form':
       if (formData) {
-        message = `Hi Muhammad! I filled out your contact form:
+        message = `Hi Muhammad! I filled out your contact form with the following details:
+
 Name: ${formData.name}
 Email: ${formData.email}
 Subject: ${formData.subject}
-Message: ${formData.message}`;
+Message: ${formData.message}
+
+Looking forward to hearing from you!`;
       } else {
         message = 'Hi Muhammad! I\'m interested in your services.';
       }

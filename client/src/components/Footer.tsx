@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   const handleNavClick = (section: string) => {
@@ -23,24 +23,24 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4" data-testid="footer-social-links">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-                 className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors"
+                 className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                  data-testid="footer-link-github">
-                <Github className="w-5 h-5 text-primary" />
+                <FaGithub className="w-5 h-5 text-primary" />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                 className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors"
+                 className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                  data-testid="footer-link-linkedin">
-                <Linkedin className="w-5 h-5 text-primary" />
+                <FaLinkedin className="w-5 h-5 text-primary" />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                 className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors"
+                 className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                  data-testid="footer-link-twitter">
-                <Twitter className="w-5 h-5 text-primary" />
+                <FaTwitter className="w-5 h-5 text-primary" />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                 className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors"
+                 className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                  data-testid="footer-link-instagram">
-                <Instagram className="w-5 h-5 text-primary" />
+                <FaInstagram className="w-5 h-5 text-primary" />
               </a>
             </div>
           </div>
@@ -49,22 +49,22 @@ export default function Footer() {
             <h4 className="font-semibold mb-4" data-testid="footer-quick-links-title">Quick Links</h4>
             <div className="space-y-2">
               <button onClick={() => handleNavClick('home')} 
-                      className="block text-left text-muted-foreground hover:text-primary transition-colors"
+                      className="block text-left text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
                       data-testid="footer-link-home">
                 Home
               </button>
               <button onClick={() => handleNavClick('about')} 
-                      className="block text-left text-muted-foreground hover:text-primary transition-colors"
+                      className="block text-left text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
                       data-testid="footer-link-about">
                 About
               </button>
               <button onClick={() => handleNavClick('projects')} 
-                      className="block text-left text-muted-foreground hover:text-primary transition-colors"
+                      className="block text-left text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
                       data-testid="footer-link-projects">
                 Projects
               </button>
               <button onClick={() => handleNavClick('contact')} 
-                      className="block text-left text-muted-foreground hover:text-primary transition-colors"
+                      className="block text-left text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
                       data-testid="footer-link-contact">
                 Contact
               </button>
