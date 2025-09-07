@@ -11,8 +11,8 @@ export default function About() {
   return (
     <section id="about" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" data-testid="about-title">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 hover:scale-105 transition-transform duration-300" data-testid="about-title">
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               About Me
             </span>
@@ -23,8 +23,8 @@ export default function About() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <div className="gradient-border p-8 rounded-lg" data-testid="ai-passion-card">
+          <div className="space-y-6 animate-slide-up">
+            <div className="gradient-border p-8 rounded-lg hover-glow transition-all duration-300 hover:transform hover:scale-105" data-testid="ai-passion-card">
               <h3 className="text-2xl font-semibold mb-4 text-primary">
                 <Brain className="inline w-6 h-6 mr-3" />
                 AI & Data Science Passion
@@ -35,7 +35,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="gradient-border p-8 rounded-lg" data-testid="fullstack-card">
+            <div className="gradient-border p-8 rounded-lg hover-glow transition-all duration-300 hover:transform hover:scale-105" data-testid="fullstack-card">
               <h3 className="text-2xl font-semibold mb-4 text-secondary">
                 <Code className="inline w-6 h-6 mr-3" />
                 Full-Stack Development
@@ -47,7 +47,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 animate-slide-up">
             <h3 className="text-2xl font-semibold mb-6" data-testid="skills-title">
               Skills & Technologies
             </h3>
@@ -70,12 +70,12 @@ export default function About() {
             </div>
 
             <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="text-center p-4 bg-card rounded-lg" data-testid="projects-stat">
-                <div className="text-3xl font-bold text-primary mb-2">50+</div>
+              <div className="text-center p-4 bg-card rounded-lg hover:bg-card/80 transition-all duration-300 transform hover:scale-105 hover:shadow-lg" data-testid="projects-stat">
+                <div className="text-3xl font-bold text-primary mb-2 animate-float">50+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
-              <div className="text-center p-4 bg-card rounded-lg" data-testid="experience-stat">
-                <div className="text-3xl font-bold text-secondary mb-2">3+</div>
+              <div className="text-center p-4 bg-card rounded-lg hover:bg-card/80 transition-all duration-300 transform hover:scale-105 hover:shadow-lg" data-testid="experience-stat">
+                <div className="text-3xl font-bold text-secondary mb-2 animate-float" style={{animationDelay: '0.5s'}}>3+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
             </div>

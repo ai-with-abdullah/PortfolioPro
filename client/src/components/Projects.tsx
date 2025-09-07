@@ -19,8 +19,8 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-card/30">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" data-testid="projects-title">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 hover:scale-105 transition-transform duration-300" data-testid="projects-title">
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Featured Projects
             </span>
@@ -32,10 +32,11 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectData.map((project) => (
+          {projectData.map((project, index) => (
             <div 
               key={project.id}
-              className="project-card group relative gradient-border rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300"
+              className="project-card group relative gradient-border rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-500 animate-slide-up hover:shadow-2xl hover-glow"
+              style={{animationDelay: `${index * 0.1}s`}}
               data-testid={`project-card-${project.id}`}
             >
               {/* Project Image */}
