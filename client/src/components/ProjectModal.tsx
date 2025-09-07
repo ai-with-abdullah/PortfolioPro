@@ -50,8 +50,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         onClick={handleBackdropClick}
         data-testid="modal-backdrop"
       />
-      <div className="relative w-full max-w-5xl max-h-[90vh] bg-card rounded-lg border border-border overflow-hidden animate-scale-in shadow-2xl">
-        <div className="flex flex-col max-h-[90vh]">
+      <div className="relative w-full max-w-md max-h-[60vh] bg-card rounded-xl border border-border overflow-hidden animate-scale-in shadow-2xl">
+        <div className="flex flex-col max-h-[60vh]">
           {/* Modal Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
             <h3 className="text-2xl font-semibold" data-testid="modal-title">
@@ -68,91 +68,69 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           {/* Modal Content */}
-          <div className="flex-1 overflow-y-auto p-6">
-            <div className="grid lg:grid-cols-2 gap-8">
-              {/* Project Media */}
-              <div className="space-y-4">
-                <div className="aspect-video bg-muted rounded-lg overflow-hidden" data-testid="modal-image">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover" 
-                  />
-                </div>
-                
-                {/* Additional images placeholder */}
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="aspect-video bg-muted/50 rounded"></div>
-                  <div className="aspect-video bg-muted/50 rounded"></div>
-                  <div className="aspect-video bg-muted/50 rounded"></div>
-                </div>
+          <div className="flex-1 overflow-y-auto p-4">
+            <div className="space-y-4">
+              {/* Project Image */}
+              <div className="aspect-video bg-muted rounded-lg overflow-hidden" data-testid="modal-image">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover" 
+                  loading="lazy"
+                />
+              </div>
+              {/* Description */}
+              <div>
+                <p className="text-muted-foreground text-sm leading-relaxed" data-testid="modal-description">
+                  {project.shortDescription}
+                </p>
               </div>
 
-              {/* Project Info */}
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-xl font-semibold mb-3">Description</h4>
-                  <p className="text-muted-foreground leading-relaxed" data-testid="modal-description">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold mb-3">Technologies Used</h4>
-                  <div className="flex flex-wrap gap-2" data-testid="modal-technologies">
-                    {project.technologies.map((tech) => (
-                      <span 
-                        key={tech}
-                        className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold mb-3">Key Features</h4>
-                  <ul className="space-y-2 text-muted-foreground" data-testid="modal-features">
-                    {project.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <span className="text-primary mr-2 mt-1">✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* BUTTONS SECTION - FIXED VERSION */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                  <Button 
-                    onClick={handleDemoClick}
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center"
-                    data-testid="button-live-preview"
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-1" data-testid="modal-technologies">
+                {project.technologies.slice(0, 4).map((tech) => (
+                  <span 
+                    key={tech}
+                    className="px-2 py-1 bg-primary/20 text-primary rounded-full text-xs"
                   >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Preview
-                  </Button>
-                  
-                  <Button 
-                    onClick={handleSourceClick}
-                    variant="outline"
-                    className="px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    data-testid="button-source-code"
-                  >
-                    <Code className="w-4 h-4 mr-2" />
-                    Source Code
-                  </Button>
-                  
-                  <Button 
-                    onClick={() => openWhatsApp('buy_code')}
-                    className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center transform hover:scale-105 shadow-lg hover:shadow-xl"
-                    data-testid="button-contact-code"
-                  >
-                    <FaWhatsapp className="w-4 h-4 mr-2" />
-                    Contact for Code
-                  </Button>
-                </div>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+
+              {/* Buttons */}
+              <div className="flex flex-col gap-2 pt-2">
+                <Button 
+                  onClick={handleDemoClick}
+                  size="sm"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-medium transition-all flex items-center justify-center"
+                  data-testid="button-live-preview"
+                >
+                  <ExternalLink className="w-3 h-3 mr-1" />
+                  Live Preview
+                </Button>
+                
+                <Button 
+                  onClick={handleSourceClick}
+                  variant="outline"
+                  size="sm"
+                  className="rounded-lg font-medium transition-all flex items-center justify-center border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  data-testid="button-source-code"
+                >
+                  <Code className="w-3 h-3 mr-1" />
+                  Source Code
+                </Button>
+                
+                <Button 
+                  onClick={() => openWhatsApp('buy_code')}
+                  size="sm"
+                  className="bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-all flex items-center justify-center"
+                  data-testid="button-contact-code"
+                >
+                  <FaWhatsapp className="w-3 h-3 mr-1" />
+                  Contact for Code
+                </Button>
               </div>
             </div>
           </div>
