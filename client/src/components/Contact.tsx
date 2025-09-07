@@ -70,8 +70,12 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="gradient-border p-8 rounded-lg">
-            <h3 className="text-2xl font-semibold mb-6" data-testid="form-title">Send Message</h3>
+          <div className="gradient-border p-8 rounded-xl hover-glow animate-slide-in-left">
+            <h3 className="text-3xl font-bold mb-8 text-center lg:text-left" data-testid="form-title">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Send Message
+              </span>
+            </h3>
             <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -135,34 +139,38 @@ export default function Contact() {
               
               <Button 
                 type="submit" 
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="magnetic-btn w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl hover-glow text-lg"
                 data-testid="button-submit-form"
               >
-                <FaWhatsapp className="w-4 h-4 mr-2" />
+                <FaWhatsapp className="w-5 h-5 mr-2" />
                 Send via WhatsApp
               </Button>
             </form>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="gradient-border p-8 rounded-lg">
-              <h3 className="text-2xl font-semibold mb-6" data-testid="contact-info-title">Get In Touch</h3>
+          <div className="space-y-8 animate-slide-in-right">
+            <div className="gradient-border p-8 rounded-xl hover-glow hover-lift">
+              <h3 className="text-3xl font-bold mb-8 text-center lg:text-left" data-testid="contact-info-title">
+                <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+                  Get In Touch
+                </span>
+              </h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4" data-testid="contact-whatsapp">
-                  <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-green-500/30 transition-colors">
-                    <FaWhatsapp className="w-6 h-6 text-green-500" />
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4 group p-4 rounded-lg hover:bg-card/30 transition-all duration-300" data-testid="contact-whatsapp">
+                  <div className="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0 hover:bg-green-500/30 transition-colors group-hover:scale-110 duration-300">
+                    <FaWhatsapp className="w-7 h-7 text-green-500" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">WhatsApp</h4>
-                    <p className="text-muted-foreground">Available for instant chat</p>
+                    <h4 className="font-bold mb-2 text-lg group-hover:text-green-500 transition-colors">WhatsApp</h4>
+                    <p className="text-muted-foreground mb-2">Available for instant chat</p>
                     <button 
                       onClick={() => openWhatsApp('direct_contact')}
-                      className="text-green-500 hover:text-green-600 hover:underline text-sm mt-1 transition-colors"
+                      className="text-green-500 hover:text-green-600 hover:underline font-medium transition-colors"
                       data-testid="button-direct-whatsapp"
                     >
-                      Message directly
+                      Message directly →
                     </button>
                   </div>
                 </div>
@@ -200,19 +208,24 @@ export default function Contact() {
             </div>
 
             {/* Services */}
-            <div className="gradient-border p-8 rounded-lg">
-              <h3 className="text-2xl font-semibold mb-6" data-testid="services-title">Services Offered</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {services.map((service) => {
+            <div className="gradient-border p-8 rounded-xl hover-glow hover-lift">
+              <h3 className="text-3xl font-bold mb-8 text-center" data-testid="services-title">
+                <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                  Services Offered
+                </span>
+              </h3>
+              <div className="grid grid-cols-2 gap-6">
+                {services.map((service, index) => {
                   const IconComponent = service.icon;
                   return (
                     <div 
                       key={service.name}
-                      className={`text-center p-4 bg-${service.color}/10 rounded-lg`}
+                      className={`text-center p-6 bg-${service.color}/10 rounded-xl hover:bg-${service.color}/20 transition-all duration-300 hover-lift group animate-scale-in`}
+                      style={{animationDelay: `${index * 0.1}s`}}
                       data-testid={`service-${service.name.toLowerCase().replace(/\s+/g, '-')}`}
                     >
-                      <IconComponent className={`text-${service.color} text-2xl mb-2 mx-auto w-6 h-6`} />
-                      <div className="font-medium">{service.name}</div>
+                      <IconComponent className={`text-${service.color} text-3xl mb-3 mx-auto w-8 h-8 group-hover:scale-110 transition-transform animate-float`} />
+                      <div className="font-bold text-lg">{service.name}</div>
                     </div>
                   );
                 })}
