@@ -3,7 +3,7 @@ import { Eye, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { projectData, type Project } from "@/data/projects";
 import { openWhatsApp } from "@/lib/whatsapp";
-import ProjectModal from "./ProjectModal";
+import ProjectModal from "@/components/ProjectModal";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
