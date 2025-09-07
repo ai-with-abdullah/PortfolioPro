@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -17,6 +17,19 @@ export default function Home() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // Handle URL fragments (e.g., /#about, /#contact) from navigation
+  useEffect(() => {
+    const hash = window.location.hash.substring(1); // Remove the # symbol
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, []);
 
   const handleViewWork = () => {
     const projectsElement = document.getElementById('projects');

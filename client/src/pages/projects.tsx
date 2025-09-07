@@ -24,7 +24,8 @@ const extendedProjectData: Project[] = [
       'Trend visualization dashboard',
       'Automated alert system'
     ],
-    demoUrl: 'https://sentiment-analyzer-demo.com'
+    demoUrl: 'https://sentiment-analyzer-demo.com',
+    sourceUrl: 'https://github.com/muhammad-abdullah/sentiment-analyzer'
   },
   {
     id: 'blockchain-tracker',
@@ -40,7 +41,8 @@ const extendedProjectData: Project[] = [
       'Trading alerts and notifications',
       'Multi-wallet support'
     ],
-    demoUrl: 'https://crypto-tracker-demo.com'
+    demoUrl: 'https://crypto-tracker-demo.com',
+    sourceUrl: 'https://github.com/muhammad-abdullah/crypto-tracker'
   },
   {
     id: 'voice-assistant',
@@ -56,7 +58,8 @@ const extendedProjectData: Project[] = [
       'Multi-language support',
       'Context-aware conversations'
     ],
-    demoUrl: 'https://voice-assistant-demo.com'
+    demoUrl: 'https://voice-assistant-demo.com',
+    sourceUrl: 'https://github.com/muhammad-abdullah/voice-assistant'
   }
 ];
 
@@ -69,10 +72,17 @@ export default function ProjectsPage() {
       return;
     }
     
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    // For other sections (about, projects, contact), redirect to home page with the section
+    window.location.href = `/#${section}`;
+    
+    // Alternative: Navigate to home and then scroll to section
+    // This ensures we get to the right section on the home page
+    setTimeout(() => {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   const openProjectModal = (project: Project) => {

@@ -13,9 +13,17 @@ interface ProjectModalProps {
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   // Prevent background scrolling when modal is open
   useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    const originalPosition = document.body.style.position;
+    
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = originalOverflow;
+      document.body.style.position = originalPosition;
+      document.body.style.width = 'auto';
     };
   }, []);
 
@@ -42,8 +50,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         onClick={handleBackdropClick}
         data-testid="modal-backdrop"
       />
-      <div className="relative w-full max-w-6xl max-h-[95vh] bg-card rounded-lg border border-border overflow-hidden animate-scale-in shadow-2xl">
-        <div className="flex flex-col max-h-[95vh]">
+      <div className="relative w-full max-w-7xl max-h-[98vh] bg-card rounded-lg border border-border overflow-hidden animate-scale-in shadow-2xl">
+        <div className="flex flex-col max-h-[98vh]">
           {/* Modal Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
             <h3 className="text-2xl font-semibold" data-testid="modal-title">
