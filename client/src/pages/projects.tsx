@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProjectModal from "@/components/ProjectModal";
@@ -15,7 +16,7 @@ const extendedProjectData: Project[] = [
     title: 'AI Sentiment Analyzer',
     shortDescription: 'Real-time sentiment analysis tool using NLP for social media monitoring.',
     description: 'Advanced sentiment analysis tool that processes social media content in real-time using natural language processing. Features emotion detection, trend analysis, and automated reporting for brand monitoring and customer feedback analysis.',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80',
     technologies: ['Python', 'NLTK', 'Transformers', 'Flask', 'Chart.js'],
     features: [
       'Real-time sentiment classification',
@@ -32,7 +33,7 @@ const extendedProjectData: Project[] = [
     title: 'Crypto Portfolio Tracker',
     shortDescription: 'Blockchain-based portfolio tracker with real-time price updates and analytics.',
     description: 'Comprehensive cryptocurrency portfolio tracker with blockchain integration, real-time price monitoring, and advanced analytics. Features portfolio optimization suggestions and automated trading alerts.',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80',
     technologies: ['React', 'Web3.js', 'Node.js', 'PostgreSQL', 'Chart.js'],
     features: [
       'Real-time price tracking',
@@ -49,7 +50,7 @@ const extendedProjectData: Project[] = [
     title: 'AI Voice Assistant',
     shortDescription: 'Voice-activated AI assistant with natural language processing capabilities.',
     description: 'Intelligent voice assistant powered by advanced speech recognition and natural language understanding. Supports voice commands, smart home integration, and personalized responses.',
-    image: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+    image: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80',
     technologies: ['Python', 'Speech Recognition', 'TensorFlow', 'IoT', 'Azure'],
     features: [
       'Natural speech recognition',
@@ -65,14 +66,21 @@ const extendedProjectData: Project[] = [
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [, navigate] = useLocation();
 
-  // FIXED NAVIGATION - Direct redirect to home page with section hash
+  // OPTIMIZED FAST NAVIGATION - Use router navigation instead of page reloads
   const handleNavigation = (section: string) => {
     if (section === 'home') {
-      window.location.href = '/';
+      navigate('/');
     } else {
-      // Direct navigation to home page with section anchor
-      window.location.href = `/#${section}`;
+      // Navigate to home page and then scroll to section
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
     }
   };
 

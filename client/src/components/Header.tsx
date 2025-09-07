@@ -43,22 +43,11 @@ export default function Header({ onNavigate }: HeaderProps) {
   }, [location]);
 
   const handleNavClick = (section: string) => {
-    // Always navigate to home first if we're not already there
-    if (location !== '/') {
-      window.location.href = '/';
-      // Wait for navigation to complete then scroll to section
-      setTimeout(() => {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-      return;
-    }
-    
-    // If we're already on the home page, scroll to the section
-    onNavigate(section);
+    // Close mobile menu immediately for faster response
     setIsMobileMenuOpen(false);
+    
+    // Use the navigation handler passed from parent
+    onNavigate(section);
   };
 
   const getNavItemClass = (section: string) => {
