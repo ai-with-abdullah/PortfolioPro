@@ -66,23 +66,14 @@ const extendedProjectData: Project[] = [
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
+  // FIXED NAVIGATION - Direct redirect to home page with section hash
   const handleNavigation = (section: string) => {
     if (section === 'home') {
       window.location.href = '/';
-      return;
+    } else {
+      // Direct navigation to home page with section anchor
+      window.location.href = `/#${section}`;
     }
-    
-    // For other sections (about, projects, contact), redirect to home page with the section
-    window.location.href = `/#${section}`;
-    
-    // Alternative: Navigate to home and then scroll to section
-    // This ensures we get to the right section on the home page
-    setTimeout(() => {
-      const element = document.getElementById(section);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
   };
 
   const openProjectModal = (project: Project) => {
@@ -107,9 +98,8 @@ export default function ProjectsPage() {
                   All Projects
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Explore my complete collection of AI, web development, and data science projects. 
-                Each project showcases innovative solutions and cutting-edge technologies.
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Explore my complete portfolio of AI-powered solutions, web applications, and innovative projects that showcase cutting-edge technology and creative problem-solving.
               </p>
             </div>
           </div>
@@ -118,12 +108,12 @@ export default function ProjectsPage() {
         {/* Projects Grid */}
         <section className="py-20">
           <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {extendedProjectData.map((project, index) => (
                 <div 
                   key={project.id}
-                  className="project-card group relative gradient-border rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-500 animate-slide-up hover:shadow-2xl hover-glow"
-                  style={{animationDelay: `${index * 0.1}s`}}
+                  className="group bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 overflow-hidden hover:shadow-xl animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
                   data-testid={`project-card-${project.id}`}
                 >
                   {/* Project Image */}
@@ -136,47 +126,59 @@ export default function ProjectsPage() {
                     />
                   </div>
                   
-                  {/* Overlay */}
-                  <div className="project-overlay absolute inset-0 bg-black/80 flex items-center justify-center">
-                    <Button 
-                      onClick={() => openProjectModal(project)}
-                      className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transform hover:scale-105 transition-all"
-                      data-testid={`button-view-project-${project.id}`}
-                    >
-                      <Eye className="w-4 h-4 mr-2" />
-                      View Project
-                    </Button>
-                  </div>
-                  
-                  {/* Project Info */}
+                  {/* Project Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2" data-testid={`project-title-${project.id}`}>
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors" data-testid="project-title">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground mb-4" data-testid={`project-description-${project.id}`}>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3" data-testid="project-description">
                       {project.shortDescription}
                     </p>
-                    <div className="flex flex-wrap gap-2" data-testid={`project-technologies-${project.id}`}>
+                    
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2 mb-4" data-testid="project-technologies">
                       {project.technologies.slice(0, 3).map((tech) => (
                         <span 
                           key={tech}
-                          className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm"
+                          className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md"
                         >
                           {tech}
                         </span>
                       ))}
+                      {project.technologies.length > 3 && (
+                        <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
+                          +{project.technologies.length - 3} more
+                        </span>
+                      )}
                     </div>
+                    
+                    <Button 
+                      onClick={() => openProjectModal(project)}
+                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all"
+                      variant="outline"
+                      data-testid="button-view-project"
+                    >
+                      <Eye className="w-4 h-4 mr-2" />
+                      View Details
+                    </Button>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        {/* Ad Space */}
+        <div className="container mx-auto px-6 py-16">
+          <div className="ad-space rounded-lg" data-testid="ad-space-projects">
+            AdSense Advertisement Space
+          </div>
+        </div>
       </main>
-      
+
       <Footer />
       <FloatingWhatsApp />
-      
+
       {/* Project Modal */}
       {selectedProject && (
         <ProjectModal 

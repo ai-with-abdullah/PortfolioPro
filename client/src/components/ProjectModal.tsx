@@ -123,6 +123,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </ul>
                 </div>
 
+                {/* BUTTONS SECTION - FIXED VERSION */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-6">
                   <Button 
                     onClick={handleDemoClick}
@@ -132,17 +133,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Live Preview
                   </Button>
-                  {project.sourceUrl && (
-                    <Button 
-                      onClick={handleSourceClick}
-                      variant="outline"
-                      className="px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                      data-testid="button-source-code"
-                    >
-                      <Code className="w-4 h-4 mr-2" />
-                      Source Code
-                    </Button>
-                  )}
+                  
+                  <Button 
+                    onClick={handleSourceClick}
+                    variant="outline"
+                    className="px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    data-testid="button-source-code"
+                  >
+                    <Code className="w-4 h-4 mr-2" />
+                    Source Code
+                  </Button>
+                  
                   <Button 
                     onClick={() => openWhatsApp('buy_code')}
                     className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center transform hover:scale-105 shadow-lg hover:shadow-xl"
