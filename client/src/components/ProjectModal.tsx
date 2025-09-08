@@ -17,7 +17,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     const originalPosition = document.body.style.position;
     
     document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
+    document.body.style.position = 'flex';
     document.body.style.width = '100%';
     
     return () => {
@@ -50,7 +50,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         onClick={handleBackdropClick}
         data-testid="modal-backdrop"
       />
-      <div className="relative w-full max-w-md max-h-[60vh] bg-card rounded-xl border border-border overflow-hidden animate-scale-in shadow-2xl">
+      <div className="relative w-full max-w-[60vh] max-h-[60vh] bg-card rounded-xl border border-border overflow-hidden animate-scale-in shadow-2xl">
         <div className="flex flex-col max-h-[60vh]">
           {/* Modal Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">

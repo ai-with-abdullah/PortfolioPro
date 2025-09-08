@@ -136,6 +136,7 @@ export default function Header({ onNavigate }: HeaderProps) {
               Contact
             </button>
             <div className="flex justify-center space-x-4 pt-4 border-t border-border">
+              <ThemeToggle />
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
                  className="text-foreground hover:text-primary transition-all duration-300 p-2"
                  data-testid="mobile-link-github">
