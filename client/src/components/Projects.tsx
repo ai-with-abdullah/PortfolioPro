@@ -77,7 +77,8 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* View All Projects button - commented out for future use */}
+        {/* <div className="text-center mt-12">
           <Link href="/projects">
             <Button 
               size="lg"
@@ -88,7 +89,7 @@ export default function Projects() {
               View All Projects
             </Button>
           </Link>
-        </div>
+        </div> */}
       </div>
 
       {/* Project Modal */}

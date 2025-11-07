@@ -83,11 +83,11 @@ export default function Hero({ onViewWork }: HeroProps) {
           </div>
 
           {/* Quick stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
-            <div className="text-center" data-testid="stat-projects">
+          <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {/* <div className="text-center" data-testid="stat-projects">
               <div className="text-3xl font-bold text-primary mb-1">50+</div>
               <div className="text-sm text-muted-foreground">Projects</div>
-            </div>
+            </div> */}
             <div className="text-center" data-testid="stat-experience">
               <div className="text-3xl font-bold text-primary mb-1">3+</div>
               <div className="text-sm text-muted-foreground">Years</div>
@@ -96,10 +96,10 @@ export default function Hero({ onViewWork }: HeroProps) {
               <div className="text-3xl font-bold text-primary mb-1">15+</div>
               <div className="text-sm text-muted-foreground">Technologies</div>
             </div>
-            <div className="text-center" data-testid="stat-clients">
+            {/* <div className="text-center" data-testid="stat-clients">
               <div className="text-3xl font-bold text-primary mb-1">25+</div>
               <div className="text-sm text-muted-foreground">Clients</div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

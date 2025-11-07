@@ -12,6 +12,45 @@ export interface Project {
 
 export const projectData: Project[] = [
   {
+    id: 'face-attendance',
+    title: 'Face Attendance System',
+    shortDescription: 'AI-powered facial recognition system for automated attendance tracking and management.',
+    description: 'Advanced facial recognition system built with deep learning models for automated attendance tracking. Features real-time face detection, recognition with high accuracy, and comprehensive attendance management dashboard.',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80',
+    technologies: ['Python', 'OpenCV', 'TensorFlow', 'Face Recognition', 'Flask'],
+    features: [
+      'Real-time face detection and recognition',
+      'Automated attendance marking',
+      'Comprehensive admin dashboard',
+      'Multiple camera support',
+      'Detailed attendance reports'
+    ],
+    demoUrl: '#',
+    sourceUrl: undefined
+  },
+  {
+    id: 'word-counter-plus',
+    title: 'Word Counter Plus',
+    shortDescription: 'Advanced text analysis tool with word count, character count, and readability metrics.',
+    description: 'Professional text analysis and word counting tool featuring real-time statistics, readability scores, keyword density analysis, and comprehensive writing metrics. Perfect for writers, students, and content creators.',
+    image: 'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
+    features: [
+      'Real-time word and character counting',
+      'Readability score analysis',
+      'Keyword density tracking',
+      'Reading time estimation',
+      'Export and save functionality'
+    ],
+    demoUrl: 'https://wordcounterplusapp.com/',
+    sourceUrl: undefined
+  }
+];
+
+// Previous projects (commented out for future use)
+/*
+export const archivedProjects: Project[] = [
+  {
     id: 'ai-chatbot',
     title: 'AI Conversational Chatbot',
     shortDescription: 'Advanced NLP chatbot using transformers and GPT architecture for natural conversations.',
@@ -114,3 +153,4 @@ export const projectData: Project[] = [
     sourceUrl: 'https://github.com/muhammad-abdullah/web-scraper'
   }
 ];
+*/
