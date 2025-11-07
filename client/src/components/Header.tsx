@@ -73,11 +73,11 @@ export default function Header({ onNavigate }: HeaderProps) {
                     data-testid="nav-about">
               About
             </button>
-            {/* <button onClick={() => handleNavClick('projects')} 
+            <button onClick={() => handleNavClick('projects')} 
                     className={getNavItemClass('projects')}
                     data-testid="nav-projects">
               Projects
-            </button> */}
+            </button>
             <button onClick={() => handleNavClick('contact')} 
                     className={getNavItemClass('contact')}
                     data-testid="nav-contact">
@@ -125,11 +125,11 @@ export default function Header({ onNavigate }: HeaderProps) {
                     data-testid="mobile-nav-about">
               About
             </button>
-            {/* <button onClick={() => handleNavClick('projects')} 
+            <button onClick={() => handleNavClick('projects')} 
                     className="block w-full text-left py-2 hover:text-primary transition-colors"
                     data-testid="mobile-nav-projects">
               Projects
-            </button> */}
+            </button>
             <button onClick={() => handleNavClick('contact')} 
                     className="block w-full text-left py-2 hover:text-primary transition-colors"
                     data-testid="mobile-nav-contact">
