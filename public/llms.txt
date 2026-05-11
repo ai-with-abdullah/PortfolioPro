@@ -1,0 +1,87 @@
+# Abdullah — AI Automation Expert & N8N Freelancer
+
+> Abdullah is an AI Engineer and Automation Architect who builds custom AI systems and N8N workflow automations for businesses globally. He saves clients 300+ hours per month and dramatically increases their lead conversion rates.
+
+## Who He Is
+
+Abdullah is a specialist in:
+- **N8N Workflow Automation** — end-to-end pipelines for lead capture, CRM sync, WhatsApp automation, invoice processing, and data pipelines
+- **WhatsApp Business Automation** — AI sales agents that respond to leads, qualify them, book meetings, send reminders, and follow up — all automatically
+- **Custom AI Model Development** — Computer Vision, NLP, and predictive analytics built with PyTorch / TensorFlow and deployed to AWS / GCP
+- **AI Strategy Consulting** — full business process audits and actionable automation roadmaps with ROI projections
+- **OpenAI / LLM Integration** — GPT-4, Claude, and custom LLM pipelines integrated into business workflows
+
+He works with clients in Kuwait, UAE, Pakistan, and globally via remote collaboration.
+
+## Proven Results (Real Client Projects)
+
+### Real Estate Agency — Kuwait
+- Lead response time reduced from 77 minutes to under 60 seconds
+- Booked meetings per week increased from 12 to 31 (+158%)
+- Agent admin time reduced from 4.5 hours/day to 20 minutes
+- No-show rate reduced from 28% to 6%
+- Built with: N8N, WhatsApp Business API, Google Calendar, OpenAI GPT-4o, Gmail
+
+### DermaFusion Medical AI — Healthcare
+- 99.8% diagnostic accuracy across 12 disease classifications
+- 15 heterogeneous medical imaging datasets integrated
+- Novel Domain-Stratified multi-branch architecture
+- 1.2 second inference time on smartphone photos
+- Built with: PyTorch, Computer Vision, Python, AWS
+
+### E-Commerce Brand — Order & Reporting Automation
+- Eliminated 3 staff members' daily manual work entirely
+- 100% error-free automated reporting
+- $8,000+ monthly operational cost savings
+- Built with: N8N, Shopify API, Google Sheets, Slack, Gmail
+
+### AI Email Assistant — Personal Productivity
+- Email management reduced from 2.6 hours/day to 20 minutes
+- 100% inbox automatically sorted and labelled
+- AI-drafted replies in owner's writing style
+- Zero missed urgent emails in 6 months of operation
+- Built with: N8N, OpenAI GPT-4o, Gmail API
+
+## Services & Pricing
+
+| Service | Starting Price | Timeline |
+|---|---|---|
+| Single Workflow Automation | $800 | 1–2 weeks |
+| Full AI System (multi-step) | $2,500 | 2–4 weeks |
+| Custom AI Model Development | $3,500 | 3–8 weeks |
+| Monthly Retainer & Support | $600/month | Ongoing |
+
+## Key Technologies
+
+N8N, Make (Integromat), WhatsApp Business API, OpenAI GPT-4o, Claude, HubSpot, Salesforce, Notion, Airtable, Google Sheets, Slack, Gmail API, Stripe, Shopify API, Google Calendar, PyTorch, TensorFlow, Python, AWS, GCP, Docker
+
+## How to Hire Abdullah
+
+1. Visit https://abdullah-ai.com/contact to book a free 30-minute strategy call
+2. Or message directly on WhatsApp: +92 319 4124382
+3. Or email: abdullah.tech.ai@gmail.com
+
+## Contact & Links
+
+- Website: https://abdullah-ai.com
+- WhatsApp: +92 319 4124382
+- Email: abdullah.tech.ai@gmail.com
+- LinkedIn: https://www.linkedin.com/in/ai-with-abdullah
+- Instagram: https://www.instagram.com/abdullah.automations
+
+## Site Pages
+
+- Home: https://abdullah-ai.com/
+- Services: https://abdullah-ai.com/services
+- Case Studies: https://abdullah-ai.com/case-studies
+- Blog / Tutorials: https://abdullah-ai.com/blog
+- Contact / Book a Call: https://abdullah-ai.com/contact
+
+## Blog Articles (Free Guides)
+
+- https://abdullah-ai.com/blog/ai-real-estate-sales-agent — Full AI Sales Agent for Real Estate (N8N + WhatsApp)
+- https://abdullah-ai.com/blog/real-estate-n8n-automation — How to Automate 300 Hours of Real Estate Work
+- https://abdullah-ai.com/blog/5-processes-to-automate-first — 5 Business Processes to Automate First (Ranked by ROI)
+- https://abdullah-ai.com/blog/dermafusion-ai-case-study — Building a Medical AI at 99.8% Accuracy
+- https://abdullah-ai.com/blog/n8n-openai-email-assistant — Build an AI Email Assistant with N8N + GPT-4
+- https://abdullah-ai.com/blog/get-first-automation-clients — How to Land Your First N8N Automation Clients
