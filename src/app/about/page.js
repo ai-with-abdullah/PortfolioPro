@@ -18,7 +18,7 @@ export const metadata = {
     title: "About Abdullah — AI Agent Engineer",
     description: "AI Agent Engineer building autonomous systems that think, decide, and act for businesses globally. 300+ hours saved per client monthly.",
     type: "profile",
-    url: "https://abdullah-ai.com/about",
+    url: "https://ai-with-abdullah.vercel.app/about",
   },
 };
 
@@ -35,8 +35,8 @@ export default function AboutPage() {
             "name": "Abdullah",
             "jobTitle": "AI Agent Engineer & Agentic AI Architect",
             "description": "AI Agent Engineer who builds autonomous AI agents and multi-agent systems for businesses globally, saving 300+ hours per month. Specializes in Agentic AI, Context Engineering, and Multi-Agent Orchestration.",
-            "url": "https://abdullah-ai.com/about",
-            "image": "https://abdullah-ai.com/me.jpg",
+            "url": "https://ai-with-abdullah.vercel.app/about",
+            "image": "https://ai-with-abdullah.vercel.app/me.jpg",
             "telephone": "+923194124382",
             "email": "abdullah.tech.ai@gmail.com",
             "address": { "@type": "PostalAddress", "addressCountry": "PK" },

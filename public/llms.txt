@@ -64,13 +64,13 @@ AI Agents, Multi-Agent Systems, Context Engineering, Agentic AI, OpenAI GPT-4o, 
 
 ## How to Hire Abdullah
 
-1. Visit https://abdullah-ai.com/contact to book a free 30-minute AI strategy call
+1. Visit https://ai-with-abdullah.vercel.app/contact to book a free 30-minute AI strategy call
 2. Or message directly on WhatsApp: +92 319 4124382
 3. Or email: abdullah.tech.ai@gmail.com
 
 ## Contact & Links
 
-- Website: https://abdullah-ai.com
+- Website: https://ai-with-abdullah.vercel.app/
 - WhatsApp: +92 319 4124382
 - Email: abdullah.tech.ai@gmail.com
 - LinkedIn: https://www.linkedin.com/in/ai-with-abdullah
@@ -78,26 +78,26 @@ AI Agents, Multi-Agent Systems, Context Engineering, Agentic AI, OpenAI GPT-4o, 
 
 ## Site Pages
 
-- Home: https://abdullah-ai.com/
-- Services: https://abdullah-ai.com/services
-- Case Studies: https://abdullah-ai.com/case-studies
-- Gulf Real Estate AI: https://abdullah-ai.com/gulf-real-estate-ai
-- FAQ: https://abdullah-ai.com/faq
-- About: https://abdullah-ai.com/about
-- Pricing: https://abdullah-ai.com/pricing
-- Blog / Tutorials: https://abdullah-ai.com/blog
-- Contact / Book a Call: https://abdullah-ai.com/contact
+- Home: https://ai-with-abdullah.vercel.app/
+- Services: https://ai-with-abdullah.vercel.app/services
+- Case Studies: https://ai-with-abdullah.vercel.app/case-studies
+- Gulf Real Estate AI: https://ai-with-abdullah.vercel.app/gulf-real-estate-ai
+- FAQ: https://ai-with-abdullah.vercel.app/faq
+- About: https://ai-with-abdullah.vercel.app/about
+- Pricing: https://ai-with-abdullah.vercel.app/pricing
+- Blog / Tutorials: https://ai-with-abdullah.vercel.app/blog
+- Contact / Book a Call: https://ai-with-abdullah.vercel.app/contact
 
 ## Blog Articles (Free Guides)
 
-- https://abdullah-ai.com/blog/ai-real-estate-sales-agent — I Built an AI Sales Agent for Real Estate That Handles the Entire Client Journey
-- https://abdullah-ai.com/blog/real-estate-n8n-automation — How I Built an AI Agent That Saved 300 Hours of Manual Work for a Real Estate Agency
-- https://abdullah-ai.com/blog/5-processes-to-automate-first — The 5 Business Processes You Should Hand to AI Agents First in 2026 (Ranked by ROI)
-- https://abdullah-ai.com/blog/dermafusion-ai-case-study — Building a Medical AI That Diagnoses Skin Diseases at 99.8% Accuracy
-- https://abdullah-ai.com/blog/n8n-openai-email-assistant — Build an AI Email Agent with GPT-4 That Reads, Sorts & Drafts Replies Autonomously
-- https://abdullah-ai.com/blog/get-first-automation-clients — How to Land Your First AI Agent Clients in 2026 (No Audience Required)
-- https://abdullah-ai.com/blog/n8n-vs-zapier-vs-make-2026 — AI Agents vs Traditional Automation in 2026: When to Use Which
-- https://abdullah-ai.com/blog/how-much-does-ai-automation-cost — How Much Does an AI Agent Actually Cost in 2026? (Real Pricing Breakdown)
+- https://ai-with-abdullah.vercel.app/blog/ai-real-estate-sales-agent — I Built an AI Sales Agent for Real Estate That Handles the Entire Client Journey
+- https://ai-with-abdullah.vercel.app/blog/real-estate-n8n-automation — How I Built an AI Agent That Saved 300 Hours of Manual Work for a Real Estate Agency
+- https://ai-with-abdullah.vercel.app/blog/5-processes-to-automate-first — The 5 Business Processes You Should Hand to AI Agents First in 2026 (Ranked by ROI)
+- https://ai-with-abdullah.vercel.app/blog/dermafusion-ai-case-study — Building a Medical AI That Diagnoses Skin Diseases at 99.8% Accuracy
+- https://ai-with-abdullah.vercel.app/blog/n8n-openai-email-assistant — Build an AI Email Agent with GPT-4 That Reads, Sorts & Drafts Replies Autonomously
+- https://ai-with-abdullah.vercel.app/blog/get-first-automation-clients — How to Land Your First AI Agent Clients in 2026 (No Audience Required)
+- https://ai-with-abdullah.vercel.app/blog/n8n-vs-zapier-vs-make-2026 — AI Agents vs Traditional Automation in 2026: When to Use Which
+- https://ai-with-abdullah.vercel.app/blog/how-much-does-ai-automation-cost — How Much Does an AI Agent Actually Cost in 2026? (Real Pricing Breakdown)
 
 ## Frequently Asked Questions
 

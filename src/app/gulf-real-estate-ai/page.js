@@ -25,7 +25,7 @@ export const metadata = {
     title: "AI Agents for Gulf Real Estate Agencies",
     description: "AI-powered lead qualification, WhatsApp sales agents, and automated appointment booking for real estate agencies across the Gulf. 3× more booked meetings within 30 days.",
     type: "website",
-    url: "https://abdullah-ai.com/gulf-real-estate-ai",
+    url: "https://ai-with-abdullah.vercel.app/gulf-real-estate-ai",
   },
 };
 
@@ -45,7 +45,7 @@ export default function GulfRealEstateAI() {
               "@type": "Person",
               "name": "Abdullah",
               "jobTitle": "AI Agent Engineer",
-              "url": "https://abdullah-ai.com",
+              "url": "https://ai-with-abdullah.vercel.app/",
             },
             "areaServed": [
               { "@type": "Country", "name": "Kuwait" },

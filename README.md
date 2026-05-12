@@ -2,7 +2,7 @@
 
 A modern, high-performance personal branding website built for **Abdullah AI** — an AI Agent Engineer specializing in autonomous AI agents and multi-agent systems for businesses globally, with a focus on Gulf real estate automation.
 
-**Live Site:** [abdullah-ai.com](https://abdullah-ai.com)
+**Live Site:** [https://ai-with-abdullah.vercel.app/](https://ai-with-abdullah.vercel.app/)
 
 ---
 
@@ -176,4 +176,4 @@ This project is proprietary. All rights reserved.
 
 ---
 
-**Built by [Abdullah AI](https://abdullah-ai.com) — AI Agent Engineer**
+**Built by [Abdullah AI](https://ai-with-abdullah.vercel.app/) — AI Agent Engineer**

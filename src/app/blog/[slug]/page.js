@@ -102,13 +102,13 @@ export default async function BlogPost({ params }) {
             "description": post.desc,
             "datePublished": post.date,
             "dateModified": post.lastUpdated || post.date,
-            "author": { "@type": "Person", "name": "Abdullah", "url": "https://abdullah-ai.com" },
+            "author": { "@type": "Person", "name": "Abdullah", "url": "https://ai-with-abdullah.vercel.app/" },
             "publisher": {
               "@type": "Organization",
               "name": "Abdullah AI",
-              "url": "https://abdullah-ai.com",
+              "url": "https://ai-with-abdullah.vercel.app/",
             },
-            "mainEntityOfPage": { "@type": "WebPage", "@id": `https://abdullah-ai.com/blog/${slug}` },
+            "mainEntityOfPage": { "@type": "WebPage", "@id": `https://ai-with-abdullah.vercel.app/blog/${slug}` },
           }),
         }}
       />

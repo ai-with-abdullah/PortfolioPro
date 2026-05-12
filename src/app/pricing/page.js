@@ -17,7 +17,7 @@ export const metadata = {
     title: "AI Agent Pricing — Abdullah AI",
     description: "Transparent pricing for AI agent development. From $1,200 for single agents to $5,000+ for complete AI sales systems. Free strategy call included.",
     type: "website",
-    url: "https://abdullah-ai.com/pricing",
+    url: "https://ai-with-abdullah.vercel.app/pricing",
   },
 };
 

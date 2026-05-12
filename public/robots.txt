@@ -6,7 +6,7 @@ Disallow: /_next/
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://abdullah-ai.com/sitemap.xml
+Sitemap: https://ai-with-abdullah.vercel.app/sitemap.xml
 
 # AI Crawlers — explicitly allowed
 User-agent: GPTBot
