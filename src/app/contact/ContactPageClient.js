@@ -8,20 +8,59 @@ export default function ContactPage() {
   const [form, setForm] = useState({
     firstName: "", email: "", company: "", service: "", problem: "",
   });
-  const [status, setStatus] = useState("idle"); // idle | sending | success
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
   const WHATSAPP_NUMBER = "923194124382";
   const EMAIL = "abdullah.tech.ai@gmail.com";
+
+  // Web3Forms access key — get yours free at https://web3forms.com
+  // This key sends form submissions directly to your Gmail inbox
+  const WEB3FORMS_KEY = "e714f3c3-cf0e-443f-9994-0bf0061cb6a3";
 
   const handleChange = (e) => {
     setForm(prev => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");
 
-    // Format a nice WhatsApp message
+    try {
+      // Send form data via Web3Forms API
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `🤖 New Strategy Call Request from ${form.firstName}`,
+          from_name: "Abdullah AI Website",
+          name: form.firstName,
+          email: form.email,
+          company: form.company || "Not specified",
+          service: form.service || "Not specified",
+          message: form.problem,
+          // Honeypot field for spam protection
+          botcheck: "",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        setForm({ firstName: "", email: "", company: "", service: "", problem: "" });
+      } else {
+        // If Web3Forms fails (e.g. key not set yet), fall back to WhatsApp + email
+        fallbackToWhatsAppEmail();
+      }
+    } catch (error) {
+      // Network error — fall back to WhatsApp + email
+      fallbackToWhatsAppEmail();
+    }
+  };
+
+  const fallbackToWhatsAppEmail = () => {
+    // Format a WhatsApp message
     const waText = encodeURIComponent(
       `Hi Abdullah! I found you through your website.\n\n` +
       `*Name:* ${form.firstName}\n` +
@@ -32,23 +71,7 @@ export default function ContactPage() {
       `I would like to book a free strategy call.`
     );
 
-    // Format the Gmail mailto
-    const mailSubject = encodeURIComponent(`Strategy Call Request from ${form.firstName}`);
-    const mailBody = encodeURIComponent(
-      `Hi Abdullah,\n\nI found your website and would like to book a free strategy call.\n\n` +
-      `Name: ${form.firstName}\nEmail: ${form.email}\nBusiness: ${form.company || "Not specified"}\n` +
-      `Service Interested In: ${form.service || "Not specified"}\n\n` +
-      `My Biggest Challenge:\n${form.problem}\n\nLooking forward to connecting!`
-    );
-
-    // Open WhatsApp first
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`, "_blank");
-
-    // Small delay then open email
-    setTimeout(() => {
-      window.open(`mailto:${EMAIL}?subject=${mailSubject}&body=${mailBody}`, "_self");
-    }, 800);
-
     setStatus("success");
   };
 
@@ -60,7 +83,7 @@ export default function ContactPage() {
 
             {/* ── Left Info Panel ── */}
             <div>
-              <p className="section-eyebrow reveal">Let's Talk</p>
+              <p className="section-eyebrow reveal">Let&apos;s Talk</p>
               <h1 className="h2 reveal reveal-delay-1" style={{ marginBottom: "1.5rem" }}>
                 Book your free <span className="text-gradient">AI Strategy Call.</span>
               </h1>
@@ -126,16 +149,16 @@ export default function ContactPage() {
               {status === "success" ? (
                 <div className="form-success">
                   <div className="form-success-icon">🎉</div>
-                  <h3>Request Sent!</h3>
-                  <p>WhatsApp and your email client have opened. I will confirm your call slot within 24 hours.</p>
+                  <h3>Message Received!</h3>
+                  <p>Your strategy call request has been sent to my inbox. I will reply within 24 hours to confirm your call slot.</p>
                   <div className="form-success-channels">
                     <div className="success-channel">
-                      <span>📱</span>
-                      <span>WhatsApp opened</span>
+                      <span>✅</span>
+                      <span>Message delivered</span>
                     </div>
                     <div className="success-channel">
                       <span>📧</span>
-                      <span>Email opened</span>
+                      <span>Sent to inbox</span>
                     </div>
                   </div>
                   <button
@@ -146,14 +169,39 @@ export default function ContactPage() {
                     Submit Another Request
                   </button>
                 </div>
+              ) : status === "error" ? (
+                <div className="form-success">
+                  <div className="form-success-icon">⚠️</div>
+                  <h3>Something went wrong</h3>
+                  <p>The form could not be sent. Please contact me directly via WhatsApp or email instead.</p>
+                  <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+                    <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">WhatsApp Me →</a>
+                    <a href={`mailto:${EMAIL}`} className="btn btn-ghost">Send Email</a>
+                  </div>
+                </div>
               ) : (
                 <>
                   <h3 style={{ marginBottom: "0.5rem" }}>Tell me about your business</h3>
-                  <p style={{ color: "var(--c-muted)", fontSize: "0.9rem", marginBottom: "2rem" }}>
-                    I will reach out within 24 hours to confirm your call slot.
+                  <p style={{ color: "var(--c-muted)", fontSize: "0.9rem", marginBottom: "1.5rem" }}>
+                    Fill this out and I will reach out within 24 hours to confirm your call slot.
                   </p>
 
+                  {/* Urgency notice */}
+                  <div style={{ display: "flex", gap: "0.75rem", padding: "1rem 1.25rem", background: "rgba(37, 211, 102, 0.06)", border: "1px solid rgba(37, 211, 102, 0.2)", borderRadius: "var(--radius-sm)", marginBottom: "2rem", alignItems: "flex-start" }}>
+                    <span style={{ fontSize: "1.2rem", flexShrink: 0, marginTop: "0.1rem" }}>⚡</span>
+                    <div style={{ fontSize: "0.85rem", color: "var(--c-muted)", lineHeight: "1.6" }}>
+                      <strong style={{ color: "var(--c-text)" }}>Need a faster response?</strong> Message me directly on{" "}
+                      <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" style={{ color: "#25d366", fontWeight: 600, textDecoration: "underline" }}>
+                        WhatsApp
+                      </a>{" "}
+                      for an immediate reply. Form and email responses are typically within 24 hours.
+                    </div>
+                  </div>
+
                   <form onSubmit={handleSubmit}>
+                    {/* Honeypot anti-spam — hidden from users */}
+                    <input type="checkbox" name="botcheck" style={{ display: "none" }} />
+
                     <div className="form-group form-row">
                       <div>
                         <label htmlFor="firstName">First Name</label>
@@ -174,9 +222,11 @@ export default function ContactPage() {
                       <label htmlFor="service">What service are you interested in?</label>
                       <select id="service" value={form.service} onChange={handleChange}>
                         <option value="">Select a service...</option>
-                        <option value="Workflow Automation (N8N)">Workflow Automation (N8N)</option>
+                        <option value="AI Agent Development (WhatsApp/CRM)">AI Agent Development (WhatsApp/CRM)</option>
+                        <option value="AI Lead Qualification System">AI Lead Qualification System</option>
                         <option value="Custom AI Model Development">Custom AI Model Development</option>
                         <option value="AI Strategy Consulting">AI Strategy Consulting</option>
+                        <option value="Gulf Real Estate AI Agent">Gulf Real Estate AI Agent</option>
                         <option value="Not sure — need advice">Not sure — need advice</option>
                       </select>
                     </div>
@@ -192,19 +242,12 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {/* Submit channels indicator */}
-                    <div className="submit-channels">
-                      <span className="channel-badge wa">📱 WhatsApp</span>
-                      <span style={{ color: "var(--c-muted)", fontSize: "0.8rem" }}>+</span>
-                      <span className="channel-badge em">📧 Gmail</span>
-                    </div>
-
                     <button
                       type="submit"
                       className="btn btn-primary btn-lg form-submit"
                       disabled={status === "sending"}
                     >
-                      {status === "sending" ? "Opening WhatsApp & Email…" : "Book My Free Strategy Call →"}
+                      {status === "sending" ? "Sending…" : "Book My Free Strategy Call →"}
                     </button>
                   </form>
 

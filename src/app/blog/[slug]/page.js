@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getPostBySlug, posts } from "../data";
 
@@ -83,7 +84,10 @@ export default async function BlogPost({ params }) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const relatedPosts = posts.filter(p => p.slug !== post.slug).slice(0, 3);
+  // Use relatedSlugs if available, otherwise fall back to first 3 posts
+  const relatedPosts = post.relatedSlugs
+    ? post.relatedSlugs.map(s => posts.find(p => p.slug === s)).filter(Boolean)
+    : posts.filter(p => p.slug !== post.slug).slice(0, 3);
 
   return (
     <>
@@ -97,6 +101,7 @@ export default async function BlogPost({ params }) {
             "headline": post.title,
             "description": post.desc,
             "datePublished": post.date,
+            "dateModified": post.lastUpdated || post.date,
             "author": { "@type": "Person", "name": "Abdullah", "url": "https://abdullah-ai.com" },
             "publisher": {
               "@type": "Organization",
@@ -114,8 +119,11 @@ export default async function BlogPost({ params }) {
       </div>
 
       {/* Hero Cover */}
-      <div className="blog-post-hero" style={{ background: post.coverGradient }}>
-        <div className="blog-post-hero-content">
+      <div className="blog-post-hero" style={{ background: post.coverGradient, position: "relative", overflow: "hidden" }}>
+        {post.coverImage && (
+          <Image src={post.coverImage} alt="" fill sizes="100vw" style={{ objectFit: "cover", opacity: 0.35 }} />
+        )}
+        <div className="blog-post-hero-content" style={{ position: "relative", zIndex: 2 }}>
           <div className="blog-post-tag">{post.tag}</div>
           <h1 className="blog-post-title">{post.title}</h1>
           <div className="blog-post-meta">
@@ -124,10 +132,16 @@ export default async function BlogPost({ params }) {
             <span>{post.date}</span>
             <span className="meta-dot">·</span>
             <span>{post.readTime}</span>
+            {post.lastUpdated && post.lastUpdated !== post.date && (
+              <>
+                <span className="meta-dot">·</span>
+                <span>Updated {post.lastUpdated}</span>
+              </>
+            )}
           </div>
         </div>
         {/* Visual Accent */}
-        <div className="blog-hero-accent">
+        <div className="blog-hero-accent" style={{ position: "relative", zIndex: 2 }}>
           <div className="blog-hero-icon">{post.coverEmoji}</div>
           <div className="blog-hero-label">{post.coverLabel}</div>
         </div>
@@ -152,15 +166,14 @@ export default async function BlogPost({ params }) {
           {/* Author Card */}
           <div className="sidebar-card">
             <div className="sidebar-author">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/me.jpg" alt="Abdullah" className="sidebar-avatar" />
+              <Image src="/me.jpg" alt="Abdullah" className="sidebar-avatar" width={52} height={52} />
               <div>
                 <strong>Abdullah</strong>
-                <span>AI & Automation Engineer</span>
+                <span>AI Agent Engineer</span>
               </div>
             </div>
             <p style={{ fontSize: "0.88rem", color: "var(--c-muted)", marginBottom: "1rem" }}>
-              I build custom AI models and N8N automations for businesses globally. 10+ live systems running 24/7.
+              I build autonomous AI agents and multi-agent systems for businesses globally. 10+ live systems running 24/7.
             </p>
             <Link href="/contact" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
               Work With Me →
@@ -172,8 +185,12 @@ export default async function BlogPost({ params }) {
             <h4 style={{ marginBottom: "1.25rem", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "1px", color: "var(--c-muted)" }}>More Articles</h4>
             {relatedPosts.map(rp => (
               <Link key={rp.slug} href={`/blog/${rp.slug}`} className="sidebar-related-post">
-                <div className="srp-cover" style={{ background: rp.coverGradient }}>
-                  <span>{rp.coverEmoji}</span>
+                <div className="srp-cover" style={{ background: rp.coverGradient, position: "relative", overflow: "hidden" }}>
+                  {rp.coverImage ? (
+                    <Image src={rp.coverImage} alt="" fill sizes="80px" style={{ objectFit: "cover" }} />
+                  ) : (
+                    <span>{rp.coverEmoji}</span>
+                  )}
                 </div>
                 <div>
                   <div className="blog-card-tag" style={{ marginBottom: "0.25rem" }}>{rp.tag}</div>

@@ -1,41 +1,42 @@
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "./Navbar";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
-  title: { default: "Abdullah | AI Automation Expert & N8N Freelancer", template: "%s | Abdullah AI" },
-  description: "I automate your entire business operations using custom AI & N8N workflows — so you can stop doing repetitive work and start scaling. 300+ hours saved per client monthly. Serving clients globally.",
+  title: { default: "Abdullah | AI Agent Engineer & Agentic AI Architect", template: "%s | Abdullah AI" },
+  description: "I build autonomous AI agents and multi-agent systems that think, decide, and act for your business — 24/7. 300+ hours saved per client monthly. Serving clients globally.",
   keywords: [
-    "AI Automation Expert", "N8N Expert", "Workflow Automation", "N8N Automation Pakistan",
-    "hire n8n freelancer", "AI consultant", "WhatsApp automation", "custom AI models",
-    "business automation services", "AI engineer Pakistan", "automate lead follow up",
+    "AI Agent Engineer", "Agentic AI Developer", "Multi-Agent Systems", "AI Agent Architect",
+    "hire AI agent developer", "AI consultant", "WhatsApp AI agent", "custom AI agents",
+    "autonomous AI systems", "AI engineer Pakistan", "AI-powered lead automation",
   ],
   metadataBase: new URL("https://abdullah-ai.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Abdullah | AI Automation Expert & N8N Freelancer",
-    description: "Custom AI Automation systems that eliminate manual work and scale your business. 300+ hours saved per client monthly. Serving clients in Kuwait, UAE, Pakistan & globally.",
+    title: "Abdullah | AI Agent Engineer & Agentic AI Architect",
+    description: "Custom AI agents and multi-agent systems that think and act for your business. 300+ hours saved per client monthly. Serving clients in Kuwait, UAE, Pakistan & globally.",
     type: "website",
     url: "https://abdullah-ai.com",
     siteName: "Abdullah AI",
     images: [
       {
-        url: "/me.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Abdullah — AI Automation Expert & N8N Freelancer",
+        alt: "Abdullah AI — AI Agent Engineer & Agentic AI Architect",
       },
     ],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdullah | AI Automation Expert & N8N Freelancer",
-    description: "Custom AI Automation systems that eliminate manual work and scale your business. 300+ hours saved per client monthly.",
-    images: ["/me.jpg"],
+    title: "Abdullah | AI Agent Engineer & Agentic AI Architect",
+    description: "Custom AI agents and multi-agent systems that think and act for your business. 300+ hours saved per client monthly.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -52,47 +53,50 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Abdullah",
-                "jobTitle": "AI Automation Expert & N8N Freelancer",
-                "description": "AI Engineer and Automation Architect who builds custom AI systems and N8N workflows for businesses globally, saving 300+ hours per month.",
-                "url": "https://abdullah-ai.com",
-                "telephone": "+923194124382",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressCountry": "PK",
-                },
-                "sameAs": [
-                  "https://www.linkedin.com/in/ai-with-abdullah",
-                  "https://www.instagram.com/abdullah.automations"
-                ],
-                "knowsAbout": ["AI Automation", "N8N", "Workflow Automation", "Machine Learning", "WhatsApp Business API", "OpenAI", "HubSpot"],
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Abdullah",
+              "jobTitle": "AI Agent Engineer & Agentic AI Architect",
+              "description": "AI Agent Engineer who builds autonomous AI agents and multi-agent systems for businesses globally, saving 300+ hours per month.",
+              "url": "https://abdullah-ai.com",
+              "telephone": "+923194124382",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "PK",
               },
-              {
-                "@context": "https://schema.org",
-                "@type": "ProfessionalService",
-                "name": "Abdullah AI Automation",
-                "description": "Custom AI Models and Workflow Automation for businesses. N8N expert and AI consultant serving clients globally.",
-                "url": "https://abdullah-ai.com",
-                "telephone": "+923194124382",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressCountry": "PK",
-                },
-                "founder": { "@type": "Person", "name": "Abdullah" },
-                "serviceType": ["AI Automation", "Workflow Automation", "Custom AI Development", "N8N Automation", "WhatsApp Automation"],
-                "priceRange": "$$$",
-                "areaServed": "Worldwide",
-                "openingHours": "Mo-Su 00:00-23:59",
-                "sameAs": [
-                  "https://www.linkedin.com/in/ai-with-abdullah",
-                  "https://www.instagram.com/abdullah.automations"
-                ]
-              }
-            ])
+              "sameAs": [
+                "https://www.linkedin.com/in/ai-with-abdullah",
+                "https://www.instagram.com/abdullah.automations"
+              ],
+              "knowsAbout": ["AI Agents", "Multi-Agent Systems", "Agentic AI", "Context Engineering", "Machine Learning", "WhatsApp Business API", "OpenAI"],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "Abdullah AI",
+              "description": "Custom AI Agents and Multi-Agent Systems for businesses. AI Agent Engineer serving clients globally.",
+              "url": "https://abdullah-ai.com",
+              "telephone": "+923194124382",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "PK",
+              },
+              "founder": { "@type": "Person", "name": "Abdullah" },
+              "serviceType": ["AI Agent Development", "Multi-Agent Systems", "Agentic AI Solutions", "Custom AI Development", "WhatsApp AI Agents"],
+              "priceRange": "$$$",
+              "areaServed": "Worldwide",
+              "openingHours": "Mo-Su 00:00-23:59",
+              "sameAs": [
+                "https://www.linkedin.com/in/ai-with-abdullah",
+                "https://www.instagram.com/abdullah.automations"
+              ]
+            }),
           }}
         />
         {/* WebSite Schema — enables Sitelinks Searchbox in Google */}
@@ -104,21 +108,30 @@ export default function RootLayout({ children }) {
               "@type": "WebSite",
               "name": "Abdullah AI",
               "url": "https://abdullah-ai.com",
-              "description": "AI Automation Expert and N8N Freelancer — custom AI systems and workflow automations for businesses globally.",
+              "description": "AI Agent Engineer — autonomous AI agents and multi-agent systems for businesses globally.",
               "author": { "@type": "Person", "name": "Abdullah" },
             }),
           }}
         />
-        {/* ⚠️ REPLACE THIS with your real code from Google Search Console → Settings → Ownership Verification → HTML Tag */}
-        {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> */}
+        {/*
+          TODO: Google Search Console Verification
+          ==========================================
+          1. Go to https://search.google.com/search-console
+          2. Add your property: https://abdullah-ai.com
+          3. Choose "HTML tag" verification method
+          4. Copy the content="..." value
+          5. Paste it below and uncomment the meta tag
+        */}
+        {/* <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" /> */}
         {/* Author & SEO meta */}
-        <meta name="author" content="Abdullah — AI Automation Expert" />
+        <meta name="author" content="Abdullah — AI Agent Engineer" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <meta name="geo.region" content="PK" />
         <meta name="geo.country" content="Pakistan" />
       </head>
       <body>
         <Navbar />
+        <Analytics />
 
         <main className="page-main">{children}</main>
 
@@ -132,7 +145,7 @@ export default function RootLayout({ children }) {
           <div className="footer-inner">
             <div className="footer-brand">
               <span className="logo-icon">⬡</span> Abdullah AI
-              <p>Custom AI Automation. Real Results.</p>
+              <p>AI Agents That Think & Act. Real Results.</p>
               <div className="footer-socials">
                 <a href="https://www.linkedin.com/in/ai-with-abdullah" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="LinkedIn">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -148,9 +161,18 @@ export default function RootLayout({ children }) {
             <div className="footer-cols">
               <div>
                 <h4>Services</h4>
-                <Link href="/services#workflow">Workflow Automation</Link>
-                <Link href="/services#ai">Custom AI Models</Link>
-                <Link href="/services#consulting">AI Consulting</Link>
+                <Link href="/services#agents">AI Agent Development</Link>
+                <Link href="/services#ai">Custom AI Solutions</Link>
+                <Link href="/services#consulting">AI Strategy Consulting</Link>
+                <Link href="/gulf-real-estate-ai">Gulf Real Estate AI</Link>
+                <Link href="/pricing">Pricing</Link>
+              </div>
+              <div>
+                <h4>Company</h4>
+                <Link href="/about">About</Link>
+                <Link href="/faq">FAQ</Link>
+                <Link href="/blog">Blog</Link>
+                <Link href="/case-studies">Case Studies</Link>
               </div>
               <div>
                 <h4>Connect</h4>
@@ -228,11 +250,18 @@ export default function RootLayout({ children }) {
                 });
               }, {
                 threshold: 0,
-                rootMargin: '0px 0px -60px 0px'
+                rootMargin: '0px 0px 0px 0px'
               });
+              var vh = window.innerHeight;
               document.querySelectorAll('.reveal').forEach(function(el) {
                 el.removeAttribute('data-visible');
-                observer.observe(el);
+                // Immediately reveal elements already in viewport — no observer delay
+                var rect = el.getBoundingClientRect();
+                if (rect.top < vh && rect.bottom > 0) {
+                  el.setAttribute('data-visible', '1');
+                } else {
+                  observer.observe(el);
+                }
               });
             }
             // Wait for React hydration to complete before running DOM mutations
@@ -242,11 +271,11 @@ export default function RootLayout({ children }) {
             function safeInit() {
               if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', function() {
-                  // Wait 300ms after DOMContentLoaded to ensure React hydration is complete
-                  requestAnimationFrame(function() { setTimeout(function() { initPage(); updateActiveNav(); }, 300); });
+                  // Wait 50ms after DOMContentLoaded to ensure React hydration is complete
+                  requestAnimationFrame(function() { setTimeout(function() { initPage(); updateActiveNav(); }, 50); });
                 });
               } else {
-                requestAnimationFrame(function() { setTimeout(function() { initPage(); updateActiveNav(); }, 300); });
+                requestAnimationFrame(function() { setTimeout(function() { initPage(); updateActiveNav(); }, 50); });
               }
             }
             safeInit();

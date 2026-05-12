@@ -74,11 +74,13 @@ body::after {
    LAYOUT HELPERS
    ========================================= */
 .wrap {
+  width: 100%; /* fill grid/flex cell — prevents content-size shrinking */
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--gutter);
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 .section {
@@ -89,10 +91,14 @@ body::after {
    TYPOGRAPHY
    ========================================= */
 .display {
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-size: clamp(1rem, 5vw, 4.5rem);
   font-weight: 800;
-  line-height: 1.07;
-  letter-spacing: -0.04em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  hyphens: none;
 }
 
 .h2 {
@@ -130,6 +136,9 @@ body::after {
   font-weight: 600; font-size: 1rem;
   transition: all 0.25s ease;
   cursor: pointer; border: none;
+  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--c-accent), #5b4de0);
@@ -175,7 +184,17 @@ body::after {
 }
 .logo-icon { color: var(--c-accent); font-size: 1.4rem; }
 .logo-dim { color: var(--c-muted); font-weight: 400; }
-.nav-links { display: flex; align-items: center; gap: 0.25rem; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0; /* never shrink the nav links row */
+}
+.nav-links li {
+  flex-shrink: 0; /* never collapse nav items */
+  min-width: max-content; /* keep labels on one line */
+  white-space: nowrap;
+}
 .nav-link {
   padding: 0.5rem 1rem;
   color: var(--c-muted);
@@ -204,6 +223,7 @@ body::after {
   display: grid;
   place-items: center;
   padding-top: 5rem;
+  padding-bottom: 3rem;
   text-align: center;
   position: relative;
 }
@@ -338,7 +358,7 @@ body::after {
   font-size: 2.8rem; font-weight: 800;
   letter-spacing: -0.04em;
   background: linear-gradient(to bottom, #fff, #777);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 .stat-label { color: var(--c-muted); font-size: 0.9rem; margin-top: 0.25rem; }
 
@@ -606,7 +626,37 @@ select option { background: var(--c-surface2); }
   opacity: 1;
   transform: translateY(0);
 }
-/* Staggered delays for grouped reveals */
+
+/* Hero is ALWAYS above the fold — force visible, no JS dependency */
+.hero .reveal,
+.hero .reveal[data-visible] {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* hero-fade-in: pure CSS animation, zero dependency on JS or data-visible */
+/* Only animates transform — elements are ALWAYS at opacity:1, never hidden */
+@keyframes heroSlideUp {
+  from { transform: translateY(20px); }
+  to   { transform: translateY(0); }
+}
+.hero-fade-in {
+  animation: heroSlideUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-delay-1 { animation-delay: 0.1s; }
+.hero-delay-2 { animation-delay: 0.25s; }
+.hero-delay-3 { animation-delay: 0.4s; }
+.hero-delay-4 { animation-delay: 0.55s; }
+.hero-delay-5 { animation-delay: 0.7s; }
+
+/* Reduced-motion: skip animation entirely */
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-in { animation: none; }
+}
+
+/* Staggered delays for non-hero sections */
 .reveal-delay-1 { transition-delay: 0.12s; }
 .reveal-delay-2 { transition-delay: 0.22s; }
 .reveal-delay-3 { transition-delay: 0.32s; }
@@ -623,14 +673,15 @@ select option { background: var(--c-surface2); }
 }
 .footer-inner {
   max-width: var(--max-w); margin: 0 auto; padding: 4rem var(--gutter);
-  display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 3rem;
+  align-items: start;
 }
 .footer-brand {
   font-size: 1.1rem; font-weight: 700;
   display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
 }
 .footer-brand p { width: 100%; font-size: 0.9rem; color: var(--c-muted); font-weight: 400; margin-top: 0.75rem; }
-.footer-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.footer-cols { display: contents; }
 .footer-cols h4 { font-size: 0.85rem; color: var(--c-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1.2rem; }
 .footer-cols a { display: block; color: var(--c-muted); font-size: 0.9rem; margin-bottom: 0.8rem; transition: color 0.2s; }
 .footer-cols a:hover { color: var(--c-text); }
@@ -1018,13 +1069,15 @@ select option { background: var(--c-surface2); }
   .contact-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .blog-preview-grid { grid-template-columns: 1fr 1fr; }
   .blog-hero-card { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  .nav-links .nav-link { display: none; }
+  /* Nav links on mobile are handled by the full-screen overlay — never hide them here */
+  /* .nav-links .nav-link { display: none; } <-- REMOVED: this was hiding mobile menu items */
   .flow-track { gap: 0; overflow-x: auto; padding-bottom: 1rem; }
   .flow-node { min-width: 90px; padding: 0.8rem 1rem; }
   .process-steps { grid-template-columns: 1fr; }
@@ -1435,7 +1488,7 @@ select option { background: var(--c-surface2); }
   flex-shrink: 0;
   font-size: 0.85rem;
 }
-.google-stars { color: #fbbc04; font-size: 0.75rem; letter-spacing: 1px; }
+/* .google-stars { color: #fbbc04; font-size: 0.75rem; letter-spacing: 1px; } */
 .google-badge-text { display: flex; flex-direction: column; gap: 0; }
 .google-badge-label { font-size: 0.68rem; color: var(--c-muted); font-weight: 400; }
 
@@ -1561,29 +1614,21 @@ input:focus, textarea:focus, select:focus { box-shadow: 0 0 0 3px rgba(124,106,2
   50% { box-shadow: 0 0 0 8px rgba(124,106,255,0.07); }
 }
 
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(60px);
-  animation: orbFloat 8s ease-in-out infinite;
-}
-.hero-orb-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(124,106,255,0.18), transparent); top: 10%; right: 10%; }
-.hero-orb-2 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,212,170,0.12), transparent); bottom: 20%; left: 5%; animation-delay: 3s; }
-@keyframes orbFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.05); }
-  66% { transform: translate(-20px, 15px) scale(0.95); }
-}
+/* hero-orb duplicate removed — defined in HERO section above */
 
 /* =========================================
    FULL RESPONSIVE BREAKPOINTS
    ========================================= */
 @media (max-width: 1024px) {
+  .display { font-size: clamp(1.5rem, 3.5vw, 2.8rem); }
+  .h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); }
+  /* Let the hero heading use full width — removes the 860px inline cap */
+  .hero .wrap { max-width: 100% !important; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .process-steps { grid-template-columns: repeat(2, 1fr); }
   .process-steps::before { display: none; }
   .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .problem-solution { grid-template-columns: 1fr; }
   .study-card { grid-template-columns: 1fr; }
@@ -1597,8 +1642,7 @@ input:focus, textarea:focus, select:focus { box-shadow: 0 0 0 3px rgba(124,106,2
   .nav-links {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(6,6,8,0.97);
-    backdrop-filter: blur(20px);
+    background: transparent; /* no background when closed */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1606,17 +1650,49 @@ input:focus, textarea:focus, select:focus { box-shadow: 0 0 0 3px rgba(124,106,2
     z-index: 150;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, background 0.3s ease;
   }
-  .nav-links.open { opacity: 1; pointer-events: all; }
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: all;
+    background: rgba(6,6,8,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
   .nav-links li { width: 100%; text-align: center; }
   .nav-link { font-size: 1.25rem; padding: 0.75rem 2rem; display: block; }
   .btn-nav { font-size: 1.1rem; padding: 0.75rem 2rem; display: inline-block; margin-top: 0.5rem; }
-  .display { font-size: clamp(2rem, 8vw, 3rem); }
-  .h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
-  .hero { padding-top: 6rem; min-height: auto; padding-bottom: 3rem; }
-  .hero-cta-row { flex-direction: column; gap: 0.75rem; }
-  .hero-cta-row .btn { width: 100%; max-width: 340px; justify-content: center; }
+  /* h2 on mobile */
+  .h2 { font-size: clamp(1.3rem, 5vw, 2.2rem); }
+  .hero {
+    display: block;          /* remove grid — block elements are always full width */
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    min-height: auto;
+    text-align: center;
+  }
+  .hero .wrap {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 2rem var(--gutter) 0;
+  }
+  .hero-title {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  /* CTA buttons — stack vertically, full-width */
+  .hero-cta-row { flex-direction: column; gap: 0.75rem; align-items: stretch; width: 100%; }
+  .hero-cta-row .btn {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    padding: 0.9rem 1.25rem;
+  }
   .flow-visual { overflow-x: auto; padding-bottom: 1rem; }
   .flow-track { min-width: 520px; }
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
@@ -1631,7 +1707,7 @@ input:focus, textarea:focus, select:focus { box-shadow: 0 0 0 3px rgba(124,106,2
   .contact-form-card { padding: 1.75rem; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem var(--gutter); }
-  .footer-cols { grid-template-columns: 1fr 1fr; }
+  .footer-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
   .footer-bottom-socials { justify-content: center; }
   .float-wa { bottom: 1.5rem; right: 1.5rem; width: 50px; height: 50px; }
@@ -1641,6 +1717,18 @@ input:focus, textarea:focus, select:focus { box-shadow: 0 0 0 3px rgba(124,106,2
   .study-card { grid-template-columns: 1fr; }
   .study-body { padding: 1.75rem; }
   .study-results { gap: 1.25rem; flex-wrap: wrap; }
+  /* Blog section header on mobile — stack vertically */
+  .blog-section-header-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* ≤600px: buttons adjust for small screens */
+@media (max-width: 600px) {
+  .hero-cta-row .btn { font-size: 0.95rem; padding: 0.8rem 1rem; }
 }
 
 @media (max-width: 480px) {
@@ -1667,9 +1755,9 @@ html, body {
   max-width: 100%;
 }
 
-/* Prevent ANY child from breaking horizontal layout */
-.hero { overflow: hidden; }
-.wrap { overflow: hidden; }
+/* Prevent horizontal overflow on hero while allowing vertical decorative elements */
+.hero { overflow-x: clip; }
+.wrap { overflow: visible; }
 
 /* Fix flow-visual on all mobile sizes */
 @media (max-width: 900px) {
@@ -1787,11 +1875,7 @@ html, body {
     font-size: 0.78rem;
     max-width: 90vw;
   }
-  .display {
-    font-size: clamp(1.85rem, 7vw, 2.8rem);
-    text-align: center;
-    word-break: break-word;
-  }
+  /* .display uses the global clamp(1rem, 6vw, 5.5rem) — no override needed */
   /* Ensure trust badges row is centered on mobile */
   .trust-badges-row {
     text-align: center;
@@ -2045,4 +2129,164 @@ html, body {
     flex: 1;
     min-width: 100px;
   }
+}
+
+/* =========================================
+   COMPREHENSIVE MOBILE RESPONSIVE FIXES
+   ========================================= */
+
+/* Global: grid/flex children can shrink below content size to prevent overflow */
+/* NOTE: Only apply to grid/flex items, NOT to all elements (that breaks nav li etc.) */
+td, th { min-width: 0; }
+
+/* Prevent long words/urls from breaking layout — exclude nav elements */
+p, .blog-body li, .blog-body td, .blog-body th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Code blocks — scroll horizontally, never overflow */
+.blog-body pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre;
+  word-break: normal;
+  max-width: 100%;
+}
+.blog-body code {
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+.blog-body pre code {
+  word-break: normal;
+  white-space: pre;
+}
+
+/* Tables — scrollable wrapper */
+.blog-body table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+/* ─────────────────────── 768px ─────────────────────── */
+@media (max-width: 768px) {
+
+  /* Blog post layout — single column, no sidebar */
+  .blog-layout {
+    grid-template-columns: 1fr !important;
+    padding: 2rem var(--gutter);
+    gap: 2rem;
+  }
+  .blog-sidebar { display: none; }
+
+  /* Blog post hero — compact */
+  .blog-post-hero {
+    grid-template-columns: 1fr !important;
+    padding: 6rem var(--gutter) 2.5rem !important;
+    gap: 1.5rem;
+    min-height: auto;
+  }
+  .blog-hero-accent { display: none; }
+
+  /* Blog article body typography */
+  .blog-body { font-size: 0.97rem; }
+  .blog-body h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; }
+  .blog-body h3 { font-size: 1.15rem; }
+  .blog-lead { font-size: 1.05rem; }
+
+  /* Blog code/pre smaller padding */
+  .blog-body pre { padding: 1rem 0.85rem; }
+
+  /* About section — single column */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  .about-photo-col { order: -1; }
+  .about-photo-wrap,
+  .about-photo,
+  .photo-placeholder {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  /* Blog index — single column */
+  .blog-preview-grid { grid-template-columns: 1fr !important; }
+  .blog-grid { grid-template-columns: 1fr !important; }
+  .blog-hero-card {
+    grid-template-columns: 1fr !important;
+    flex-direction: column;
+  }
+  .blog-hero-visual { min-height: 160px; }
+
+  /* Testimonials — single column */
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+
+  /* Section padding — tighter on mobile */
+  .section { padding: clamp(2.5rem, 7vw, 4.5rem) 0; }
+
+  /* Services & process — single column */
+  .services-grid { grid-template-columns: 1fr !important; }
+  .process-steps { grid-template-columns: 1fr 1fr !important; }
+
+  /* Stats — 2 col */
+  .stats-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* Pricing anchor */
+  .pricing-anchor {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1.75rem !important;
+  }
+  .pricing-tiers { width: 100%; flex-wrap: wrap; }
+  .pricing-tier { flex: 1; min-width: 90px; padding: 0.75rem 1rem; }
+
+  /* FAQ */
+  .faq-question { font-size: 0.97rem; }
+
+  /* CTA banners — tighter padding */
+  .cta-band { padding: 2.5rem 1.5rem !important; }
+}
+
+/* ─────────────────────── 480px ─────────────────────── */
+@media (max-width: 480px) {
+
+  /* Stats — single column */
+  .stats-grid { grid-template-columns: 1fr !important; }
+
+  /* Process steps — single column */
+  .process-steps { grid-template-columns: 1fr !important; }
+
+  /* Footer */
+  .footer-cols { grid-template-columns: 1fr !important; }
+
+  /* Buttons — full width */
+  .hero-cta-row { flex-direction: column; align-items: stretch; }
+  .hero-cta-row .btn { width: 100%; justify-content: center; }
+
+  /* Pricing tiers — vertical stack */
+  .pricing-tiers { flex-direction: column; }
+  .pricing-tier { width: 100%; }
+
+  /* Smaller about photo */
+  .about-photo-wrap,
+  .about-photo,
+  .photo-placeholder {
+    width: 170px !important;
+    height: 170px !important;
+  }
+
+  /* Blog pre code — smaller font */
+  .blog-body pre { padding: 0.85rem; font-size: 0.8rem; }
+
+  /* Form rows */
+  .form-row { grid-template-columns: 1fr !important; }
+
+  /* Hero orbs — hide to reduce paint cost */
+  .hero-orb-1, .hero-orb-2 { display: none; }
+
+  /* Section header spacing */
+  .section-header { margin-bottom: 2rem; }
 }

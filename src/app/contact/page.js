@@ -2,9 +2,13 @@
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata = {
-  title: "Book a Free AI Strategy Call | Contact — Abdullah AI Automation Expert",
-  description: "Book a free 30-minute strategy call with Abdullah, an AI Automation Expert and N8N freelancer. Discover exactly which processes to automate first for maximum ROI — zero cost, zero commitment.",
-  keywords: ["book ai automation consultation", "hire n8n expert", "free ai strategy call", "ai automation freelancer contact", "n8n automation consultant"],
+  title: "Book a Free AI Strategy Call | Contact",
+  description: "Book a free 30-minute strategy call with Abdullah, an AI Agent Engineer and Agentic AI Architect. Discover exactly where AI agents can save you time and money — zero cost, zero commitment.",
+  keywords: ["book AI agent consultation", "hire AI agent engineer", "free AI strategy call", "AI agent developer contact", "agentic AI consultant"],
+  openGraph: {
+    title: "Book a Free AI Strategy Call | Contact Abdullah AI",
+    description: "Book a free 30-minute strategy call with Abdullah, an AI Agent Engineer. Discover exactly where AI agents can save you time and money — zero cost, zero commitment.",
+  },
   alternates: { canonical: "/contact" },
 };
 

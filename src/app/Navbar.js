@@ -29,6 +29,7 @@ export default function Navbar() {
           <li><Link href="/" className={`nav-link${isActive("/") ? " nav-link-active" : ""}`}>Home</Link></li>
           <li><Link href="/services" className={`nav-link${isActive("/services") ? " nav-link-active" : ""}`}>Services</Link></li>
           <li><Link href="/case-studies" className={`nav-link${isActive("/case-studies") ? " nav-link-active" : ""}`}>Case Studies</Link></li>
+          <li><Link href="/gulf-real-estate-ai" className={`nav-link${isActive("/gulf-real-estate-ai") ? " nav-link-active" : ""}`}>Gulf Real Estate</Link></li>
           <li><Link href="/blog" className={`nav-link${isActive("/blog") ? " nav-link-active" : ""}`}>Blog</Link></li>
 
           {/* Only show "Book a Call" button when NOT on the contact page */}

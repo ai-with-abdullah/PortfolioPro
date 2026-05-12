@@ -1,63 +1,70 @@
-# Abdullah — AI Automation Expert & N8N Freelancer
+# Abdullah — AI Agent Engineer & Agentic AI Architect
 
-> Abdullah is an AI Engineer and Automation Architect who builds custom AI systems and N8N workflow automations for businesses globally. He saves clients 300+ hours per month and dramatically increases their lead conversion rates.
+> Abdullah is an AI Agent Engineer who builds autonomous AI agents and multi-agent systems that think, decide, and act for businesses globally. His clients save 300+ hours per month and 3× their lead conversion rates. He specializes in Agentic AI, Context Engineering, and Multi-Agent Orchestration.
 
 ## Who He Is
 
 Abdullah is a specialist in:
-- **N8N Workflow Automation** — end-to-end pipelines for lead capture, CRM sync, WhatsApp automation, invoice processing, and data pipelines
-- **WhatsApp Business Automation** — AI sales agents that respond to leads, qualify them, book meetings, send reminders, and follow up — all automatically
-- **Custom AI Model Development** — Computer Vision, NLP, and predictive analytics built with PyTorch / TensorFlow and deployed to AWS / GCP
-- **AI Strategy Consulting** — full business process audits and actionable automation roadmaps with ROI projections
-- **OpenAI / LLM Integration** — GPT-4, Claude, and custom LLM pipelines integrated into business workflows
+- **AI Agent Development** — autonomous agents that reason, decide, and act: lead qualification, sales follow-up, customer support, and operations — all running 24/7 without human intervention
+- **Multi-Agent Systems** — orchestrating multiple AI agents that collaborate, share context, and execute complex business workflows end-to-end
+- **WhatsApp AI Agents** — intelligent sales agents on WhatsApp Business API that qualify leads, book meetings, send reminders, and follow up — autonomously
+- **Custom AI/ML Solutions** — Computer Vision, NLP, and predictive analytics built with PyTorch / TensorFlow and deployed to AWS / GCP
+- **AI Strategy Consulting** — full business process audits and actionable AI agent roadmaps with ROI projections
+- **Context Engineering** — designing the reasoning context, memory, and decision logic that makes AI agents domain-aware and reliable
 
 He works with clients in Kuwait, UAE, Pakistan, and globally via remote collaboration.
 
 ## Proven Results (Real Client Projects)
 
-### Real Estate Agency — Kuwait
+### Real Estate AI Sales Agent — Kuwait
+- Built an autonomous AI sales agent for a real estate agency on WhatsApp
 - Lead response time reduced from 77 minutes to under 60 seconds
 - Booked meetings per week increased from 12 to 31 (+158%)
 - Agent admin time reduced from 4.5 hours/day to 20 minutes
 - No-show rate reduced from 28% to 6%
-- Built with: N8N, WhatsApp Business API, Google Calendar, OpenAI GPT-4o, Gmail
+- Built with: AI Agent (n8n), WhatsApp Business API, Google Calendar, OpenAI GPT-4o, Gmail, HubSpot
 
 ### DermaFusion Medical AI — Healthcare
+- Engineered a multi-agent AI diagnostic pipeline for skin disease classification
 - 99.8% diagnostic accuracy across 12 disease classifications
 - 15 heterogeneous medical imaging datasets integrated
-- Novel Domain-Stratified multi-branch architecture
+- Novel Domain-Stratified multi-branch architecture with calibrated confidence scoring
 - 1.2 second inference time on smartphone photos
 - Built with: PyTorch, Computer Vision, Python, AWS
 
-### E-Commerce Brand — Order & Reporting Automation
+### E-Commerce Order & Operations Agent
+- Built an AI operations agent that handles the entire post-purchase flow autonomously
 - Eliminated 3 staff members' daily manual work entirely
 - 100% error-free automated reporting
 - $8,000+ monthly operational cost savings
-- Built with: N8N, Shopify API, Google Sheets, Slack, Gmail
+- Built with: AI Agent, Shopify API, Google Sheets, Slack, Gmail
 
-### AI Email Assistant — Personal Productivity
-- Email management reduced from 2.6 hours/day to 20 minutes
+### AI Email Agent — Personal Productivity
+- Built an AI email agent that reads, sorts, reasons about priority, and drafts replies
+- Email management reduced from 3 hours/day to 20 minutes
 - 100% inbox automatically sorted and labelled
 - AI-drafted replies in owner's writing style
 - Zero missed urgent emails in 6 months of operation
-- Built with: N8N, OpenAI GPT-4o, Gmail API
+- Built with: AI Agent, OpenAI GPT-4o, Gmail API
 
 ## Services & Pricing
 
 | Service | Starting Price | Timeline |
 |---|---|---|
-| Single Workflow Automation | $800 | 1–2 weeks |
-| Full AI System (multi-step) | $2,500 | 2–4 weeks |
-| Custom AI Model Development | $3,500 | 3–8 weeks |
-| Monthly Retainer & Support | $600/month | Ongoing |
+| Single AI Agent | $1,200+ | 1–2 weeks |
+| Multi-Agent System | $3,500+ | 2–4 weeks |
+| Custom AI Model Development | $3,500+ | 3–8 weeks |
+| Monthly Retainer & Support | $800/month | Ongoing |
+
+All pricing is project-based. No retainer lock-ins. Free 30-minute discovery call to start. You own everything he builds.
 
 ## Key Technologies
 
-N8N, Make (Integromat), WhatsApp Business API, OpenAI GPT-4o, Claude, HubSpot, Salesforce, Notion, Airtable, Google Sheets, Slack, Gmail API, Stripe, Shopify API, Google Calendar, PyTorch, TensorFlow, Python, AWS, GCP, Docker
+AI Agents, Multi-Agent Systems, Context Engineering, Agentic AI, OpenAI GPT-4o, Claude, LangChain, n8n, WhatsApp Business API, HubSpot, Salesforce, Notion, Airtable, Google Sheets, Slack, Gmail API, Stripe, Shopify API, Google Calendar, PyTorch, TensorFlow, Python, AWS, GCP, Docker, Next.js, React
 
 ## How to Hire Abdullah
 
-1. Visit https://abdullah-ai.com/contact to book a free 30-minute strategy call
+1. Visit https://abdullah-ai.com/contact to book a free 30-minute AI strategy call
 2. Or message directly on WhatsApp: +92 319 4124382
 3. Or email: abdullah.tech.ai@gmail.com
 
@@ -74,14 +81,37 @@ N8N, Make (Integromat), WhatsApp Business API, OpenAI GPT-4o, Claude, HubSpot, S
 - Home: https://abdullah-ai.com/
 - Services: https://abdullah-ai.com/services
 - Case Studies: https://abdullah-ai.com/case-studies
+- Gulf Real Estate AI: https://abdullah-ai.com/gulf-real-estate-ai
+- FAQ: https://abdullah-ai.com/faq
+- About: https://abdullah-ai.com/about
+- Pricing: https://abdullah-ai.com/pricing
 - Blog / Tutorials: https://abdullah-ai.com/blog
 - Contact / Book a Call: https://abdullah-ai.com/contact
 
 ## Blog Articles (Free Guides)
 
-- https://abdullah-ai.com/blog/ai-real-estate-sales-agent — Full AI Sales Agent for Real Estate (N8N + WhatsApp)
-- https://abdullah-ai.com/blog/real-estate-n8n-automation — How to Automate 300 Hours of Real Estate Work
-- https://abdullah-ai.com/blog/5-processes-to-automate-first — 5 Business Processes to Automate First (Ranked by ROI)
-- https://abdullah-ai.com/blog/dermafusion-ai-case-study — Building a Medical AI at 99.8% Accuracy
-- https://abdullah-ai.com/blog/n8n-openai-email-assistant — Build an AI Email Assistant with N8N + GPT-4
-- https://abdullah-ai.com/blog/get-first-automation-clients — How to Land Your First N8N Automation Clients
+- https://abdullah-ai.com/blog/ai-real-estate-sales-agent — I Built an AI Sales Agent for Real Estate That Handles the Entire Client Journey
+- https://abdullah-ai.com/blog/real-estate-n8n-automation — How I Built an AI Agent That Saved 300 Hours of Manual Work for a Real Estate Agency
+- https://abdullah-ai.com/blog/5-processes-to-automate-first — The 5 Business Processes You Should Hand to AI Agents First in 2026 (Ranked by ROI)
+- https://abdullah-ai.com/blog/dermafusion-ai-case-study — Building a Medical AI That Diagnoses Skin Diseases at 99.8% Accuracy
+- https://abdullah-ai.com/blog/n8n-openai-email-assistant — Build an AI Email Agent with GPT-4 That Reads, Sorts & Drafts Replies Autonomously
+- https://abdullah-ai.com/blog/get-first-automation-clients — How to Land Your First AI Agent Clients in 2026 (No Audience Required)
+- https://abdullah-ai.com/blog/n8n-vs-zapier-vs-make-2026 — AI Agents vs Traditional Automation in 2026: When to Use Which
+- https://abdullah-ai.com/blog/how-much-does-ai-automation-cost — How Much Does an AI Agent Actually Cost in 2026? (Real Pricing Breakdown)
+
+## Frequently Asked Questions
+
+**Q: What is an AI agent?**
+A: An AI agent is an autonomous system that can reason about context, make decisions, and take actions on behalf of your business — without human intervention. Unlike simple automation, AI agents think before they act.
+
+**Q: How long does an AI agent project take?**
+A: Most single AI agent deployments are live within 2–4 weeks. Complex multi-agent systems typically take 4–8 weeks.
+
+**Q: What tools do your AI agents integrate with?**
+A: My agents integrate with virtually any platform that has an API — including HubSpot, Salesforce, Notion, Slack, Gmail, WhatsApp, Airtable, Google Sheets, and hundreds more.
+
+**Q: Do I need technical knowledge to use the AI agents?**
+A: No. I build, deploy, and document the entire system. Your AI agents run autonomously — you interact with them naturally without writing code.
+
+**Q: Can you build an AI agent for WhatsApp?**
+A: Yes. WhatsApp AI agents are one of my most popular builds. I create agents that understand context, reason about leads, qualify them, book meetings, and follow up — all autonomously via the WhatsApp Business API.

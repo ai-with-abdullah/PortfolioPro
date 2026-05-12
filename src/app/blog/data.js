@@ -5,12 +5,15 @@ export const posts = [
     slug: "ai-real-estate-sales-agent",
     tag: "Case Study",
     title: "I Built an AI Sales Agent for Real Estate That Handles the Entire Client Journey — From First Message to Booked Meeting",
-    desc: "A full breakdown of the N8N workflow that qualifies leads, matches properties, manages calendars, reschedules meetings, sends notifications, and follows up — all without a human touching anything.",
+    desc: "A full breakdown of the AI agent system that qualifies leads, matches properties, manages calendars, reschedules meetings, sends notifications, and follows up — all without a human touching anything.",
     date: "May 10, 2026",
+    lastUpdated: "May 11, 2026",
     readTime: "11 min read",
+    relatedSlugs: ["real-estate-n8n-automation", "5-processes-to-automate-first", "how-much-does-ai-automation-cost"],
     coverGradient: "linear-gradient(135deg, #0a0014, #1a003a, #0d1f3c)",
     coverEmoji: "🏠",
-    coverLabel: "AI Sales Agent · Real Estate · N8N",
+    coverLabel: "AI Sales Agent · Real Estate · Agentic AI",
+    coverImage: "/blog-real-estate-agent.png",
     content: `
 ## The Problem With Real Estate Sales in 2026
 
@@ -197,15 +200,18 @@ Most agencies recover this within 30 days from additional closed deals alone.
   {
     slug: "real-estate-n8n-automation",
 
-    tag: "N8N Tutorial",
-    title: "How I Automated 300 Hours of Manual Work for a Real Estate Agency Using N8N",
-    desc: "A step-by-step breakdown of the exact N8N workflow that captures leads, qualifies them with AI, and sends a personalized WhatsApp message in under 60 seconds — automatically.",
+    tag: "AI Agent Tutorial",
+    title: "How I Built an AI Agent That Saved 300 Hours of Manual Work for a Real Estate Agency",
+    desc: "A step-by-step breakdown of the exact AI agent system that captures leads, qualifies them with reasoning, and sends a personalized WhatsApp message in under 60 seconds — autonomously.",
     date: "May 8, 2026",
+    lastUpdated: "May 11, 2026",
     readTime: "8 min read",
+    relatedSlugs: ["ai-real-estate-sales-agent", "5-processes-to-automate-first", "n8n-openai-email-assistant"],
     // CSS gradient — unique per post
     coverGradient: "linear-gradient(135deg, #0f0c29, #302b63, #24243e)",
     coverEmoji: "⚡",
-    coverLabel: "N8N + WhatsApp + CRM",
+    coverLabel: "AI Agent + WhatsApp + CRM",
+    coverImage: "/blog-300-hours-saved.png",
     content: `
 ## The Problem Every Real Estate Agent Has
 
@@ -282,13 +288,16 @@ Want this built for your agency? [Book a free strategy call →](/contact)
   {
     slug: "5-processes-to-automate-first",
     tag: "AI Strategy",
-    title: "The 5 Business Processes You Should Automate First in 2026 (Ranked by ROI)",
-    desc: "Not all automation is equal. I rank the top 5 workflows that deliver the highest ROI for small businesses, based on real client data and real numbers.",
+    title: "The 5 Business Processes You Should Hand to AI Agents First in 2026 (Ranked by ROI)",
+    desc: "Not all AI agent deployments are equal. I rank the top 5 use cases that deliver the highest ROI for small businesses, based on real client data and real numbers.",
     date: "May 6, 2026",
+    lastUpdated: "May 11, 2026",
     readTime: "6 min read",
+    relatedSlugs: ["how-much-does-ai-automation-cost", "n8n-vs-zapier-vs-make-2026", "real-estate-n8n-automation"],
     coverGradient: "linear-gradient(135deg, #0a0a0a, #1a0533, #0d1f3c)",
     coverEmoji: "📊",
     coverLabel: "AI ROI Strategy 2026",
+    coverImage: "/blog-5-processes.png",
     content: `
 ## Why Most Business Owners Automate the Wrong Things First
 
@@ -395,10 +404,13 @@ Need help figuring out what to automate first in YOUR business? [Book a free 30-
     title: "Building a Medical AI That Diagnoses Skin Diseases at 99.8% Accuracy — The DermaFusion Story",
     desc: "How I architected a multi-dataset AI diagnostic pipeline from scratch: the technical decisions, the failures, the breakthroughs, and the final results.",
     date: "April 28, 2026",
+    lastUpdated: "May 11, 2026",
     readTime: "12 min read",
+    relatedSlugs: ["ai-real-estate-sales-agent", "how-much-does-ai-automation-cost", "5-processes-to-automate-first"],
     coverGradient: "linear-gradient(135deg, #001a00, #003300, #1a4400)",
     coverEmoji: "🧬",
     coverLabel: "Medical AI · PyTorch · 15 Datasets",
+    coverImage: "/blog-dermafusion.png",
     content: `
 ## The Challenge: Medical AI Is Hard
 
@@ -483,14 +495,17 @@ Interested in building a custom AI model for your domain? [Let's talk →](/cont
   },
   {
     slug: "n8n-openai-email-assistant",
-    tag: "N8N Tutorial",
-    title: "Build an AI Email Assistant with N8N + GPT-4 That Reads, Sorts & Drafts Replies Automatically",
-    desc: "The complete guide to building a smart email automation workflow that processes your inbox using AI — saving 2+ hours every single day without you touching a single email.",
+    tag: "AI Agent Tutorial",
+    title: "Build an AI Email Agent with GPT-4 That Reads, Sorts & Drafts Replies Autonomously",
+    desc: "The complete guide to building a smart AI email agent that processes your inbox using reasoning — saving 2+ hours every single day without you touching a single email.",
     date: "April 20, 2026",
+    lastUpdated: "May 11, 2026",
     readTime: "10 min read",
+    relatedSlugs: ["5-processes-to-automate-first", "real-estate-n8n-automation", "n8n-vs-zapier-vs-make-2026"],
     coverGradient: "linear-gradient(135deg, #0d0d1a, #1a0d33, #0d1a33)",
     coverEmoji: "📧",
-    coverLabel: "N8N + GPT-4 + Gmail",
+    coverLabel: "AI Email Agent · GPT-4",
+    coverImage: "/blog-email-agent.png",
     content: `
 ## The Problem with Email in 2026
 
@@ -597,13 +612,16 @@ Want this built for your team? [Book a free strategy call →](/contact)
   {
     slug: "get-first-automation-clients",
     tag: "Business Growth",
-    title: "How to Land Your First N8N Automation Clients in 2026 (No Audience Required)",
-    desc: "The exact outreach strategy, scripts, pricing model, and proposal format that works right now to get paying automation clients — even if you are starting from zero.",
+    title: "How to Land Your First AI Agent Clients in 2026 (No Audience Required)",
+    desc: "The exact outreach strategy, scripts, pricing model, and proposal format that works right now to get paying AI agent clients — even if you are starting from zero.",
     date: "April 15, 2026",
+    lastUpdated: "May 11, 2026",
     readTime: "7 min read",
+    relatedSlugs: ["how-much-does-ai-automation-cost", "5-processes-to-automate-first", "n8n-vs-zapier-vs-make-2026"],
     coverGradient: "linear-gradient(135deg, #1a0a00, #331500, #4d1f00)",
     coverEmoji: "🚀",
     coverLabel: "Client Acquisition · 2026 Strategy",
+    coverImage: "/blog-first-clients.png",
     content: `
 ## The Fastest Way to Get Paid for N8N Skills in 2026
 
@@ -724,13 +742,15 @@ The only thing stopping you from landing clients is not starting. Start today.
   {
     slug: "n8n-vs-zapier-vs-make-2026",
     tag: "Comparison",
-    title: "N8N vs Zapier vs Make in 2026: Which Automation Tool Should You Use?",
-    desc: "A no-BS breakdown of the three leading workflow automation platforms. Which one is right for your business, and when does it make sense to hire an expert instead of doing it yourself?",
+    title: "AI Agents vs Traditional Automation in 2026: When to Use Which",
+    desc: "A no-BS breakdown of when you need autonomous AI agents vs simple rule-based automation. Which approach is right for your business, and when does it make sense to hire an expert?",
     date: "May 11, 2026",
+    lastUpdated: "May 11, 2026",
     readTime: "9 min read",
+    relatedSlugs: ["how-much-does-ai-automation-cost", "5-processes-to-automate-first", "get-first-automation-clients"],
     coverGradient: "linear-gradient(135deg, #0a0a1a, #1a1a3a, #0a2a1a)",
     coverEmoji: "⚔️",
-    coverLabel: "N8N vs Zapier vs Make · 2026",
+    coverLabel: "AI Agents vs Automation · 2026",
     content: `
 ## The Short Answer
 
@@ -853,13 +873,15 @@ And if you want it built correctly the first time, without the learning curve, [
   {
     slug: "how-much-does-ai-automation-cost",
     tag: "Pricing Guide",
-    title: "How Much Does AI Automation Actually Cost in 2026? (Real Pricing Breakdown)",
-    desc: "A transparent breakdown of real AI automation project costs — what affects pricing, what to expect to pay, and how to calculate your ROI before committing to a single dollar.",
+    title: "How Much Does an AI Agent Actually Cost in 2026? (Real Pricing Breakdown)",
+    desc: "A transparent breakdown of real AI agent project costs — what affects pricing, what to expect to pay, and how to calculate your ROI before committing to a single dollar.",
     date: "May 11, 2026",
+    lastUpdated: "May 11, 2026",
     readTime: "7 min read",
+    relatedSlugs: ["get-first-automation-clients", "n8n-vs-zapier-vs-make-2026", "5-processes-to-automate-first"],
     coverGradient: "linear-gradient(135deg, #0a1a0a, #0d2d0d, #1a3a1a)",
     coverEmoji: "💰",
-    coverLabel: "AI Automation Pricing · 2026",
+    coverLabel: "AI Agent Pricing · 2026",
     content: `
 ## Why AI Automation Pricing Is Confusing
 
