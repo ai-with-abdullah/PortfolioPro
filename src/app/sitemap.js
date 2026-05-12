@@ -1,6 +1,6 @@
 import { posts } from "./blog/data";
 
-const BASE_URL = "https://ai-with-abdullah.vercel.app/";
+const BASE_URL = "https://ai-with-abdullah.vercel.app";
 
 export default function sitemap() {
   // Static pages
