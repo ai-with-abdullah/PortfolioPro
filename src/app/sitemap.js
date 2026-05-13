@@ -2,69 +2,74 @@ import { posts } from "./blog/data";
 
 const BASE_URL = "https://ai-with-abdullah.vercel.app";
 
+// Fixed site launch date — use a stable date so sitemap doesn't change on every request
+const SITE_UPDATED = "2026-05-13T00:00:00Z";
+
+// ✅ Clean W3C timestamp — strip milliseconds, required by sitemap spec
+const cleanDate = (date) =>
+  new Date(date).toISOString().replace(/\.\d{3}Z$/, "Z");
+
 export default function sitemap() {
-  // Static pages
   const staticPages = [
     {
       url: `${BASE_URL}/`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/services`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/case-studies`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/contact`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/blog`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/gulf-real-estate-ai`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "weekly",
       priority: 0.95,
     },
     {
       url: `${BASE_URL}/faq`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/about`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/pricing`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "monthly",
       priority: 0.85,
     },
   ];
 
-  // Dynamic blog post pages — auto-generated from blog data
   const blogPages = posts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: new Date(post.lastUpdated || post.date),
+    lastModified: cleanDate(post.lastUpdated || post.date),
     changeFrequency: "monthly",
     priority: post.slug === posts[0]?.slug ? 0.8 : 0.7,
   }));
