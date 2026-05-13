@@ -16,6 +16,9 @@ export const metadata = {
   ],
   metadataBase: new URL("https://ai-with-abdullah.vercel.app/"),
   alternates: { canonical: "/" },
+  verification: {
+    google: "diTdhw9rFyeWNa_WssdFEQYcPeZQFJd4m-jHAKPCbH4",
+  },
   openGraph: {
     title: "Abdullah | AI Agent Engineer & Agentic AI Architect",
     description: "Custom AI agents and multi-agent systems that think and act for your business. 300+ hours saved per client monthly. Serving clients in Kuwait, UAE, Pakistan & globally.",
